@@ -21,7 +21,7 @@ class App extends React.Component {
   };
   
   componentDidMount() {
-    setTimeout(() => this.setState(dummyStore), 600);
+    setTimeout(() => this.setState(dummyStore));
   }
   renderNavRoutes() {
     return(
