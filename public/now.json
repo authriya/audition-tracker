@@ -1,0 +1,9 @@
+{
+    "version": 2,
+    "alias": "audition-tracker",
+    "name": "audition-tracker",
+    "routes": [
+        { "handle": "filesystem" },
+        { "src": "/.*", "dest": "/index.html" }
+    ]
+  }
