@@ -16,6 +16,11 @@ class AuditionPage extends React.Component {
         const {casting = []} = this.context
         const auditionPage = findAudition(auditions, auditionId)
         console.log(auditions)
+
+        if (!auditionPage) {
+            return null;
+        }
+        
         return(
             <div className="audition__page">
                 <AuditionItem 
