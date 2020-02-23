@@ -4,6 +4,10 @@
     padding: 0;
     min-width: 100%;
   }
+
+  .app__homepage {
+    margin: auto;
+  }
   
   div.app__info, div.app__inspo{
     width: 100%;
