@@ -94,15 +94,15 @@ class EditCasting extends React.Component {
             <div className="edit__casting__form">
                 <h2>Edit Casting</h2>
                 <form method="get" className="add__casting__form" onSubmit = {e => this.handleSubmit(e)}>
-                    <label for="name">Casting Office Name</label>
+                    <label htmlFor="name">Casting Office Name</label>
                     <input id="name" className="name input" name="name" value = {this.state.name}onChange = {e => this.nameChange(e.target.value)}/>
-                    <label for="address">Address</label>
+                    <label htmlFor="address">Address</label>
                     <input id="address" className="address input" name="address" value={this.state.address} onChange = {e => this.addressChange(e.target.value)}/>
-                    <label for="email">Email</label>
+                    <label htmlFor="email">Email</label>
                     <input id="email" className="email input" name="email" value = {this.state.email} onChange = {e => this.emailChange(e.target.value)}/>
-                    <label for="associates">Associates</label>
+                    <label htmlFor="associates">Associates</label>
                     <input id="associates" className="associates input" name="associates" value = {this.state.associates} onChange = {e => this.associatesChange(e.target.value)}/>
-                    <label for="preferences">Miscellaneous Preferences</label> 
+                    <label htmlFor="preferences">Miscellaneous Preferences</label> 
                     <input id="preferences" className="preferences input" name="preferences" value = {this.state.preferences} onChange = {e => this.preferencesChange(e.target.value)}/>
                     <input type="submit" value="submit-casting" />
                 </form>

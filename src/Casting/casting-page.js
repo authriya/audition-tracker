@@ -32,6 +32,7 @@ class CastingPage extends React.Component {
                     email = {castingPage.email}/>
                 <p className="associates">{castingPage.associates}</p>
                 <p className="preferences">{castingPage.preferences}</p>
+                <h2>Projects they called you in for</h2>
                 {auditions.map(audition =>
                     <li key = {audition.id}>
                     <AuditionItem 

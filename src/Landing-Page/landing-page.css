@@ -1,0 +1,34 @@
+* {
+    box-sizing: border-box;
+  }
+  
+  body {
+    margin: 20px 50px;
+    padding: 100px 50px 100px 50px;
+  }
+  
+  h1 {
+    font-size: 36px;
+    margin: auto;
+    text-align: center;
+    margin-bottom: 40px;
+  }
+  
+  .login__label, .login__input, .submit__button {
+    display: block;
+    margin: auto;
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  
+  .login__form {
+    margin-bottom: 40px;
+    background-color: lightgrey
+  }
+  
+  footer {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+  }

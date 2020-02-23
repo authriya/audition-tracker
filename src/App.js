@@ -10,10 +10,11 @@ import Homepage from './Homepage/homepage'
 import LandingPage from './Landing-Page/landing-page'
 import SignUp from './Signup/sign-up'
 import EditCasting from './Casting/edit-casting'
-import EditAudition from './Audition/add-audition'
+import EditAudition from './Audition/edit-audition'
 import dummyStore from './dummy-store'
-import {Route} from 'react-router-dom';
-import ApiContext from './ApiContext';
+import {Route} from 'react-router-dom'
+import ApiContext from './ApiContext'
+import './App.css'
 
 class App extends React.Component {
   state = {
@@ -129,7 +130,8 @@ class App extends React.Component {
       auditions: this.state.auditions,
       addAudition: this.addAudition,
       addCasting: this.addCasting,
-      editCasting: this.editCasting
+      editCasting: this.editCasting,
+      editAudition: this.editAudition
     }
     return(
       <ApiContext.Provider value = {value}>
