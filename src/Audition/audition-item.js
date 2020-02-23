@@ -13,6 +13,7 @@ class AuditionItem extends React.Component {
                 <p className="role-type attributes">{this.props.roleType}</p>
                 <p className="date attributes">{this.props.date}</p>
                 <p className = "rating">{this.props.rating}</p>
+                <Link to ={`/edit-audition/${this.props.id}`}>Edit</Link>
             </div>
         )
     }

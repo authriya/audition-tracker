@@ -20,13 +20,13 @@ class AuditionPage extends React.Component {
         if (!auditionPage) {
             return null;
         }
-        
+
         return(
             <div className="audition__page">
                 <AuditionItem 
                     id = {auditionPage.id}
                     name = {auditionPage.projectName}
-                    castingOffice = {getCastingForAuditions(casting, auditionId) || ''}
+                    castingOffice = {getCastingForAuditions(casting, auditionPage.castingOffice) || ''}
                     roleType = {auditionPage.roleType}
                     date = {auditionPage.date}
                     rating = {auditionPage.rating}

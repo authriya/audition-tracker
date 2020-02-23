@@ -6,28 +6,32 @@ export default {
             "name": "Casting Director One",
             "address": "Address one two three",
             "email": "email123@email.com",
-            "associates": "name 1, name 2, name 3"
+            "associates": "name 1, name 2, name 3",
+            "preferences": "misc"
         },
         {
             "id": "2",
             "name": "Casting Director Two",
             "address": "Address one two three",
             "email": "email123@email.com",
-            "associates": "name 1, name 2, name 3"
+            "associates": "name 1, name 2, name 3",
+            "preferences": "misc"
         },
         {
             "id": "3",
             "name": "Casting Director Three",
             "address": "Address one two three",
             "email": "email123@email.com",
-            "associates": "name 1, name 2"
+            "associates": "name 1, name 2",
+            "preferences": "misc"
         },
         {
             "id": "4",
             "name": "Casting Director Four",
             "address": "Address one two three",
             "email": "email123@email.com",
-            "associates": "name 1"
+            "associates": "name 1",
+            "preferences": "misc"
         }
     ],
     "auditions": [

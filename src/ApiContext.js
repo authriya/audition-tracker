@@ -2,5 +2,9 @@ import React from 'react'
 
 export default React.createContext({
     auditions: [],
-    casting: []
+    casting: [],
+    addAudition: () => {},
+    addCasting: () => {},
+    editAudition: () => {},
+    editCasting: () => {}
   })
