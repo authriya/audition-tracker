@@ -1,5 +1,6 @@
 import React from 'react'
 import ApiContext from '../ApiContext'
+import AuditionsApiService from '../services/auditions-api-service'
 
 class AddAuditions extends React.Component {
     constructor(props) {
@@ -89,21 +90,22 @@ class AddAuditions extends React.Component {
             callback: this.state.callback
         }
         console.log(audition)
-        this.context.addAudition(audition)
-        setTimeout(
-            this.setState({
-                castingOffice: '',
-                projectName: '',
-                projectType: '',
-                roleType: '',
-                date: '',
-                clothingNotes: '',
-                rating: '',
-                notes: '',
-                callback: false
-            }), 1000
-        )
-        this.props.history.push('/auditions')
+        AuditionsApiService.postAudition(audition)
+            .then(this.context.addAudition(audition))
+            .then(() => {
+                this.setState({
+                    castingOffice: '',
+                    projectName: '',
+                    projectType: '',
+                    roleType: '',
+                    date: '',
+                    clothingNotes: '',
+                    rating: '',
+                    notes: '',
+                    callback: false
+                })
+            })
+            .then(this.props.history.push('/auditions'))
     }
     render() {
         const {casting} = this.context

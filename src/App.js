@@ -14,6 +14,10 @@ import EditAudition from './Audition/edit-audition'
 import dummyStore from './dummy-store'
 import {Route} from 'react-router-dom'
 import ApiContext from './ApiContext'
+import AuditionsApiService from './services/auditions-api-service'
+import AuthApiService from './services/auth-api-service'
+import IdleService from './services/idle-service'
+import TokenService from './services/token-service'
 import './App.css'
 
 class App extends React.Component {
@@ -23,8 +27,73 @@ class App extends React.Component {
   };
   
   componentDidMount() {
-    setTimeout(() => this.setState(dummyStore));
+    /*
+      set the function (callback) to call when a user goes idle
+      we'll set this to logout a user when they're idle
+    */
+    IdleService.setIdleCallback(this.logoutFromIdle)
+
+    /* if a user is logged in */
+    if (TokenService.hasAuthToken()) {
+      /*
+        tell the idle service to register event listeners
+        the event listeners are fired when a user does something, e.g. move their mouse
+        if the user doesn't trigger one of these event listeners,
+          the idleCallback (logout) will be invoked
+      */
+      IdleService.regiserIdleTimerResets()
+
+      /*
+        Tell the token service to read the JWT, looking at the exp value
+        and queue a timeout just before the token expires
+      */
+      TokenService.queueCallbackBeforeExpiry(() => {
+        /* the timoue will call this callback just before the token expires */
+        AuthApiService.postRefreshToken()
+      })
+    }
+    AuditionsApiService.getCasting()
+      .then(([casting])=> {
+        this.setState({casting})
+      })
+      .catch(error => {
+        console.error({error})
+      })
+    AuditionsApiService.getAuditions()
+      .then(([auditions])=> {
+        this.setState({auditions})
+      })
+      .catch(error => {
+        console.error({error})
+      })
   }
+
+  componentWillUnmount() {
+    /*
+      when the app unmounts,
+      stop the event listeners that auto logout (clear the token from storage)
+    */
+    IdleService.unRegisterIdleResets()
+    /*
+      and remove the refresh endpoint request
+    */
+    TokenService.clearCallbackBeforeExpiry()
+  }
+
+  logoutFromIdle = () => {
+    /* remove the token from localStorage */
+    TokenService.clearAuthToken()
+    /* remove any queued calls to the refresh endpoint */
+    TokenService.clearCallbackBeforeExpiry()
+    /* remove the timeouts that auto logout when idle */
+    IdleService.unRegisterIdleResets()
+    /*
+      react won't know the token has been removed from local storage,
+      so we need to tell React to rerender
+    */
+    this.forceUpdate()
+  }
+
 
   addAudition = (audition) => {
     this.setState({
@@ -75,6 +144,12 @@ class App extends React.Component {
 
     this.setState({
       auditions: newAuditions
+    })
+  }
+
+  deleteAudition = (auditionId) => {
+    this.setState({
+      notes: this.state.auditions.filter(audition=> audition.id != auditionId)
     })
   }
 
@@ -131,7 +206,8 @@ class App extends React.Component {
       addAudition: this.addAudition,
       addCasting: this.addCasting,
       editCasting: this.editCasting,
-      editAudition: this.editAudition
+      editAudition: this.editAudition,
+      deleteAudition: this.deleteAudition
     }
     return(
       <ApiContext.Provider value = {value}>

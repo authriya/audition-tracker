@@ -1,5 +1,6 @@
 import React from 'react'
 import ApiContext from '../ApiContext'
+import AuditionsApiService from '../services/auditions-api-service'
 
 class AddCasting extends React.Component {
     constructor(props) {
@@ -40,7 +41,7 @@ class AddCasting extends React.Component {
     }
     
     preferencesChange(preferences) {
-        this.SetState({
+        this.setState({
             preferences
         })
     }
@@ -59,18 +60,19 @@ class AddCasting extends React.Component {
         }
 
         console.log(castingItem)
-        this.context.addCasting(castingItem)
+        AuditionsApiService.postCasting(castingItem)
+            .then(this.context.addCasting(castingItem))
         
-        setTimeout(
-            this.setState({
-                name: '',
-                address: '',
-                email: '',
-                associates: '',
-                preferences: ''
-            }), 1000
-        )
-        this.props.history.push('/casting')
+            .then(() => {setTimeout(
+                this.setState({
+                    name: '',
+                    address: '',
+                    email: '',
+                    associates: '',
+                    preferences: ''
+                    }), 1000
+            )})
+            .then(this.props.history.push('/casting'))
     }
     render() {
         return (

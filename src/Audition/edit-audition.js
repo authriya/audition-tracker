@@ -1,6 +1,7 @@
 import React from 'react'
 import ApiContext from '../ApiContext'
-import { findAudition } from '../route-helpers';
+import { findAudition } from '../route-helpers'
+import AuditionsApiService from '../services/auditions-api-service'
 
 class EditAudition extends React.Component {
     constructor(props) {
@@ -136,9 +137,11 @@ class EditAudition extends React.Component {
             notes: this.state.notes,
             callback: this.state.callback
         }
+
         console.log(auditionNew)
-        this.context.editAudition(auditionNew)
-        this.props.history.push('/auditions')
+        AuditionsApiService.patchAudition(auditionNew, auditionId)
+            .then(this.context.editAudition(auditionNew))
+            .then(this.props.history.push('/auditions'))
     }
 
     render() {

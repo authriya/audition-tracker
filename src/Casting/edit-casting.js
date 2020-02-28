@@ -1,6 +1,7 @@
 import React from 'react'
 import ApiContext from '../ApiContext'
 import {findCasting} from '../route-helpers'
+import AuditionsApiService from '../services/auditions-api-service'
 
 class EditCasting extends React.Component {
     constructor(props) {
@@ -86,8 +87,9 @@ class EditCasting extends React.Component {
         }
 
         console.log(castingItemNew)
-        this.context.editCasting(castingItemNew)
-        this.props.history.push('/casting')
+        AuditionsApiService.postCasting(castingItemNew)
+            .then(this.context.editCasting(castingItemNew))
+            .then(this.props.history.push('/casting'))
     }
     render() {
         return (
