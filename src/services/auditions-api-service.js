@@ -8,7 +8,7 @@ const AuditionsApiService = {
         'authorization': `bearer ${TokenService.getAuthToken()}`,
       },
     })
-      .then(([auditions]) =>
+      .then((auditions) =>
         (!auditions.ok)
           ? auditions.json().then(e => Promise.reject(e))
           : auditions.json()
@@ -57,9 +57,9 @@ const AuditionsApiService = {
         'content-type': 'application/json',
         'authorization': `bearer ${TokenService.getAuthToken()}`,
       },
-      body: JSON.stringify({
+      body: JSON.stringify(
         audition
-      }),
+      ),
     })
       .then(res =>
         (!res.ok)
@@ -91,9 +91,9 @@ const AuditionsApiService = {
         'content-type': 'application/json',
         'authorization': `bearer ${TokenService.getAuthToken()}`,
       },
-      body: JSON.stringify({
+      body: JSON.stringify(
         audition
-      }),
+      ),
     })
     .then(res =>
       (!res.ok)
@@ -108,9 +108,9 @@ const AuditionsApiService = {
         'content-type': 'application/json',
         'authorization': `bearer ${TokenService.getAuthToken()}`,
       },
-      body: JSON.stringify({
+      body: JSON.stringify(
         casting
-      }),
+      ),
     })
     .then(res =>
       (!res.ok)
@@ -119,7 +119,7 @@ const AuditionsApiService = {
     )
   },
   deleteAudition(auditionId) {
-    fetch(`${config.API_ENDPOINT}/audition/${auditionId}`, {
+    return fetch(`${config.API_ENDPOINT}/auditions/${auditionId}`, {
       method: 'DELETE'
     })
   }

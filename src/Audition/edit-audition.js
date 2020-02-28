@@ -31,7 +31,7 @@ class EditAudition extends React.Component {
         console.log('hi!')
         const {auditionId} = this.props.match.params
         const {auditions = []} = this.context
-        const auditionPage = findAudition(auditions, auditionId)
+        const auditionPage = findAudition(auditions, parseInt(auditionId))
 
         if(!auditionPage) {
             return null
@@ -126,7 +126,7 @@ class EditAudition extends React.Component {
         const {auditionId} = this.props.match.params
 
         const auditionNew = {
-            id: auditionId,
+            id: parseInt(auditionId),
             castingOffice: this.state.castingOffice,
             projectName: this.state.projectName,
             projectType: this.state.projectType,
@@ -139,7 +139,7 @@ class EditAudition extends React.Component {
         }
 
         console.log(auditionNew)
-        AuditionsApiService.patchAudition(auditionNew, auditionId)
+        AuditionsApiService.patchAudition(auditionNew, auditionNew.id)
             .then(this.context.editAudition(auditionNew))
             .then(this.props.history.push('/auditions'))
     }

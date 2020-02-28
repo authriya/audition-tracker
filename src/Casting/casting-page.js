@@ -16,7 +16,7 @@ class CastingPage extends React.Component {
     render() {
         const {castingId} = this.props.match.params
         const {casting = []} = this.context
-        const castingPage = findCasting(casting, castingId)
+        const castingPage = findCasting(casting, parseInt(castingId))
         const auditions = getAuditionsForCasting(this.context.auditions, castingId)
 
         if (!castingPage) {

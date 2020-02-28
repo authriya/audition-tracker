@@ -9,5 +9,5 @@ export const getAuditionsForCasting = (auditions = [], castingId) => (
 )
 
 export const getCastingForAuditions = (casting=[], auditionCastingId) => (
-    (casting.find(casting => casting.id === auditionCastingId)).name
+    (casting.find(casting => casting.id === parseInt(auditionCastingId))).name
 )

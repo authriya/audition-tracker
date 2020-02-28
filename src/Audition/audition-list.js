@@ -21,6 +21,7 @@ class AuditionList extends React.Component {
                     roleType = {audition.roleType}
                     date = {audition.date}
                     rating = {this.props.rating}
+                    history = {this.props.history}
                     />
                 </li>)}
                 <div className='NoteListMain__button-container'>

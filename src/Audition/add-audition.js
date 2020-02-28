@@ -75,10 +75,8 @@ class AddAuditions extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
-        const {auditions} = this.context
 
         const audition = {
-            id: (auditions.length + 1).toString(),
             castingOffice: this.state.castingOffice,
             projectName: this.state.projectName,
             projectType: this.state.projectType,
@@ -91,7 +89,7 @@ class AddAuditions extends React.Component {
         }
         console.log(audition)
         AuditionsApiService.postAudition(audition)
-            .then(this.context.addAudition(audition))
+            .then((data) => {this.context.addAudition(data)})
             .then(() => {
                 this.setState({
                     castingOffice: '',

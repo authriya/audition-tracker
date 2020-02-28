@@ -27,7 +27,7 @@ class EditCasting extends React.Component {
     componentDidMount() {
         const {castingId} = this.props.match.params
         const {casting = []} = this.context
-        const castingPage = findCasting(casting, castingId)
+        const castingPage = findCasting(casting, parseInt(castingId))
 
         if(!castingPage) {
             return null
@@ -47,6 +47,7 @@ class EditCasting extends React.Component {
         this.setState({
             name
         })
+        console.log(this.state.name)
     }
 
     addressChange(address) {
@@ -68,7 +69,7 @@ class EditCasting extends React.Component {
     }
     
     preferencesChange(preferences) {
-        this.SetState({
+        this.setState({
             preferences
         })
     }
@@ -78,7 +79,7 @@ class EditCasting extends React.Component {
         const {castingId} = this.props.match.params
 
         const castingItemNew = {
-            id: castingId,
+            id: parseInt(castingId),
             name: this.state.name,
             address: this.state.address,
             email: this.state.email,
@@ -87,7 +88,7 @@ class EditCasting extends React.Component {
         }
 
         console.log(castingItemNew)
-        AuditionsApiService.postCasting(castingItemNew)
+        AuditionsApiService.patchCasting(castingItemNew, castingItemNew.id)
             .then(this.context.editCasting(castingItemNew))
             .then(this.props.history.push('/casting'))
     }
@@ -97,7 +98,7 @@ class EditCasting extends React.Component {
                 <h2>Edit Casting</h2>
                 <form method="get" className="add__casting__form" onSubmit = {e => this.handleSubmit(e)}>
                     <label htmlFor="name">Casting Office Name</label>
-                    <input id="name" className="name input" name="name" value = {this.state.name}onChange = {e => this.nameChange(e.target.value)}/>
+                    <input id="name" className="name input" name="name" value = {this.state.name} onChange = {e => this.nameChange(e.target.value)}/>
                     <label htmlFor="address">Address</label>
                     <input id="address" className="address input" name="address" value={this.state.address} onChange = {e => this.addressChange(e.target.value)}/>
                     <label htmlFor="email">Email</label>

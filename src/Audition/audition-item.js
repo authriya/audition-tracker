@@ -9,12 +9,6 @@ class AuditionItem extends React.Component {
         e.preventDefault()
         const auditionId = this.props.id
         AuditionsApiService.deleteAudition(auditionId)
-            .then(res => {
-                if(!res.ok) {
-                return res.json().then(e=>Promise.reject(e))
-                }
-                return
-            })
             .then(() => {
                 this.context.deleteAudition(auditionId)
                 this.props.history.push('/auditions')

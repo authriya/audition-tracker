@@ -14,7 +14,7 @@ class AuditionPage extends React.Component {
         const {auditionId} = this.props.match.params
         const {auditions = []} = this.context
         const {casting = []} = this.context
-        const auditionPage = findAudition(auditions, auditionId)
+        const auditionPage = findAudition(auditions, parseInt(auditionId))
         console.log(auditions)
 
         if (!auditionPage) {

@@ -12,7 +12,7 @@ class SignUp extends React.Component {
     
     handleSignUpSuccess = user => {
         const { history } = this.props
-        history.push('/login')
+        history.push('/')
       }
     handleSubmit = e => {
         e.preventDefault()

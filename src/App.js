@@ -11,7 +11,6 @@ import LandingPage from './Landing-Page/landing-page'
 import SignUp from './Signup/sign-up'
 import EditCasting from './Casting/edit-casting'
 import EditAudition from './Audition/edit-audition'
-import dummyStore from './dummy-store'
 import {Route} from 'react-router-dom'
 import ApiContext from './ApiContext'
 import AuditionsApiService from './services/auditions-api-service'
@@ -53,14 +52,15 @@ class App extends React.Component {
       })
     }
     AuditionsApiService.getCasting()
-      .then(([casting])=> {
+      .then((casting)=> {
         this.setState({casting})
+        console.log(casting)
       })
       .catch(error => {
         console.error({error})
       })
     AuditionsApiService.getAuditions()
-      .then(([auditions])=> {
+      .then((auditions)=> {
         this.setState({auditions})
       })
       .catch(error => {
@@ -109,16 +109,21 @@ class App extends React.Component {
 
   editCasting = (castingItemNew) => {
     const newCasting = this.state.casting.slice()
-    const idToUpdate = (Number(castingItemNew.id) - 1)
     const castingItemUpdate = {
-      id: castingItemNew.id,
+      id: parseInt(castingItemNew.id),
       name: castingItemNew.name,
       address: castingItemNew.address,
       email: castingItemNew.email,
       associates: castingItemNew.associates,
       preferences: castingItemNew.preferences
     }
-    newCasting[idToUpdate] = castingItemUpdate
+    var index = newCasting.map(function (e, i) {  
+      if (e.id === castingItemUpdate.id) {
+        return i;  
+      }
+    });
+
+    newCasting[index] = castingItemUpdate
     this.setState({
         casting: newCasting
       })
@@ -126,9 +131,8 @@ class App extends React.Component {
 
   editAudition = (auditionNew) => {
     const newAuditions = this.state.auditions.slice()
-    const idToUpdate = (Number(auditionNew.id) -1)
     const auditionUpdate = {
-      id: auditionNew.id,
+      id: parseInt(auditionNew.id),
       castingOffice: auditionNew.castingOffice,
       projectName: auditionNew.projectName,
       projectType: auditionNew.projectType,
@@ -139,8 +143,12 @@ class App extends React.Component {
       notes: auditionNew.notes,
       callback: auditionNew.callback
     }
-
-    newAuditions[idToUpdate] = auditionUpdate
+    var index = newAuditions.map(function (e, i) {  
+      if (e.id === auditionUpdate.id) {
+        return i;
+      }
+    });
+    newAuditions[index] = auditionUpdate
 
     this.setState({
       auditions: newAuditions
@@ -148,9 +156,11 @@ class App extends React.Component {
   }
 
   deleteAudition = (auditionId) => {
+    const parsedAudition = parseInt(auditionId)
     this.setState({
-      notes: this.state.auditions.filter(audition=> audition.id != auditionId)
+      auditions: this.state.auditions.filter(audition=> audition.id !== parsedAudition)
     })
+
   }
 
   renderNavRoutes() {
