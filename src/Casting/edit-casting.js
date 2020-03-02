@@ -34,13 +34,13 @@ class EditCasting extends React.Component {
         }
 
         this.setState({
-            id: castingId,
+            id: parseInt(castingId),
             name: castingPage.name,
             address: castingPage.address,
             email: castingPage.email,
             associates: castingPage.associates,
             preferences: castingPage.preferences
-        })
+        }, console.log(this.state))
     }
 
     nameChange(name) {
@@ -86,8 +86,7 @@ class EditCasting extends React.Component {
             associates: this.state.associates,
             preferences: this.state.preferences
         }
-
-        console.log(castingItemNew)
+        
         AuditionsApiService.patchCasting(castingItemNew, castingItemNew.id)
             .then(this.context.editCasting(castingItemNew))
             .then(this.props.history.push('/casting'))

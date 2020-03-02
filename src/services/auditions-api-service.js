@@ -74,9 +74,9 @@ const AuditionsApiService = {
         'content-type': 'application/json',
         'authorization': `bearer ${TokenService.getAuthToken()}`,
       },
-      body: JSON.stringify({
+      body: JSON.stringify(
         casting
-      }),
+      ),
     })
       .then(res =>
         (!res.ok)
@@ -95,11 +95,6 @@ const AuditionsApiService = {
         audition
       ),
     })
-    .then(res =>
-      (!res.ok)
-        ? res.json().then(e => Promise.reject(e))
-        : res.json()
-    )
   },
   patchCasting(casting, castingId) {
     return fetch(`${config.API_ENDPOINT}/casting/${castingId}`, {
@@ -112,11 +107,6 @@ const AuditionsApiService = {
         casting
       ),
     })
-    .then(res =>
-      (!res.ok)
-        ? res.json().then(e => Promise.reject(e))
-        : res.json()
-    )
   },
   deleteAudition(auditionId) {
     return fetch(`${config.API_ENDPOINT}/auditions/${auditionId}`, {

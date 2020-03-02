@@ -108,50 +108,36 @@ class App extends React.Component {
   }
 
   editCasting = (castingItemNew) => {
-    const newCasting = this.state.casting.slice()
     const castingItemUpdate = {
-      id: parseInt(castingItemNew.id),
-      name: castingItemNew.name,
-      address: castingItemNew.address,
-      email: castingItemNew.email,
-      associates: castingItemNew.associates,
-      preferences: castingItemNew.preferences
+      ...castingItemNew,
+      id: parseInt(castingItemNew.id)
     }
-    var index = newCasting.map(function (e, i) {  
+    var casting = this.state.casting.map(function (e, i) {  
       if (e.id === castingItemUpdate.id) {
-        return i;  
+        return castingItemUpdate;  
       }
+      return e
     });
 
-    newCasting[index] = castingItemUpdate
     this.setState({
-        casting: newCasting
+        casting
       })
   }
 
   editAudition = (auditionNew) => {
-    const newAuditions = this.state.auditions.slice()
     const auditionUpdate = {
-      id: parseInt(auditionNew.id),
-      castingOffice: auditionNew.castingOffice,
-      projectName: auditionNew.projectName,
-      projectType: auditionNew.projectType,
-      roleType: auditionNew.roleType,
-      date: auditionNew.date,
-      clothingNotes: auditionNew.clothingNotes,
-      rating: auditionNew.rating,
-      notes: auditionNew.notes,
-      callback: auditionNew.callback
+      ...auditionNew,
+      id: parseInt(auditionNew.id)
     }
-    var index = newAuditions.map(function (e, i) {  
+    var auditions = this.state.auditions.map(function (e, i) {  
       if (e.id === auditionUpdate.id) {
-        return i;
+        return auditionUpdate;
       }
+      return e
     });
-    newAuditions[index] = auditionUpdate
 
     this.setState({
-      auditions: newAuditions
+      auditions
     })
   }
 
