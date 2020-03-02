@@ -5,5 +5,10 @@
     "routes": [
         { "handle": "filesystem" },
         { "src": "/.*", "dest": "/index.html" }
-    ]
+    ],
+    "build": {
+        "env": {
+            "REACT_APP_API_ENDPOINT": "https://audition-tracker-api.herokuapp.com/api"
+        }
+    }
   }
