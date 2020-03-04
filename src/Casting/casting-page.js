@@ -24,7 +24,7 @@ class CastingPage extends React.Component {
         }
 
         return(
-            <div className="casting__page">
+            <div className="casting__page app">
                 <CastingItem
                     id= {castingPage.id}
                     name = {castingPage.name}

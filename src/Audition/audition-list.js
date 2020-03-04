@@ -11,7 +11,7 @@ class AuditionList extends React.Component {
         const {auditions = []} = this.context
         const {casting = []} = this.context
         return(
-        <div className="audition__list">
+        <div className="audition__list app">
             {auditions.map(audition => 
                 <li key = {audition.id}>
                     <AuditionItem
@@ -31,7 +31,7 @@ class AuditionList extends React.Component {
           type='button'
           className='AuditionList__add-audition-button'
         >
-          + Audition
+        <i class="fas fa-plus"></i> Audition
         </AddButton>
       </div>
         </div>

@@ -38,7 +38,7 @@ class LandingPage extends React.Component {
     render() {
         return(
             <div className="landing__page">
-                <h1 className="app__subheading">Log In To Your Audition Tracker</h1>
+                <h1 className="app__subheading">Log in to Your Audition Tracker</h1>
                 <main>
                     <form method="get" className="login__form" onSubmit = {this.handleSubmitJwtAuth}>
                         <label htmlFor="user_name" className="login__label"> Username </label>

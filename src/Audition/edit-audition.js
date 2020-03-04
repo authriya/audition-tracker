@@ -148,8 +148,8 @@ class EditAudition extends React.Component {
         const {casting} = this.context
 
         return(
-            <div className="edit__audition__page">
-            <h2> Edit Audition</h2>
+            <div className="edit__audition__page app">
+            <h2 className="app__heading1"> Edit Audition</h2>
             <form method="get" className="add__audition__htmlForm" onSubmit = {e => this.handleSubmit(e)}>
                 <label htmlFor="casting-office" className="audition__label">Who called you in?</label>
                 <select name="casting-office" id="casting-office" value = {this.state.castingOffice}className="audition__input" onChange = {e => this.castingOfficeChange(e.target.value)}>

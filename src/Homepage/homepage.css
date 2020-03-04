@@ -1,23 +1,29 @@
 * {
     box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    min-width: 100%;
   }
 
-  .app__homepage {
-    margin: auto;
-  }
-  
-  div.app__info, div.app__inspo{
-    width: 100%;
-    padding: 5px;
-  }
-  
-  div.app__info {
-    background-color: grey;
-  }
-  
-  div.app__inspo {
-    background-color: lightslategrey
-  }
+.app {
+  margin-top: 100px;
+  padding: 30px 20px;
+}
+
+.app__heading1, .app__heading2 {
+  font-family: 'Work Sans', sans-serif;
+}
+
+.app__heading1 {
+  font-size: 25px;
+}
+
+.app__heading2 {
+  font-size: 20px;
+  font-weight: normal;
+}
+
+p {
+  font-family: 'Lato', sans-serif;
+}
+
+.app__info {
+  border-bottom: 1px dotted black;
+}

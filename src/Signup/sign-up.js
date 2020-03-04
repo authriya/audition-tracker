@@ -1,6 +1,8 @@
 import React from 'react'
 import AuthApiService from '../services/auth-api-service'
 import './sign-up.css'
+import AddButton from '../AddButton/AddButton'
+import {Link} from 'react-router-dom'
 class SignUp extends React.Component {
     static defaultProps = {
         history: {
@@ -36,7 +38,13 @@ class SignUp extends React.Component {
     render() {
         return(
             <div className ="App__signup">
-                <h1>Your Acting Journey Begins Here</h1>
+                <AddButton
+                  tag={Link}
+                  to='/'
+                  type='button'
+                  className='Signup__back-button'> 
+                  <i class="fas fa-angle-left"></i> Back </AddButton>
+                <h1 className="signup__heading">Your Acting Journey Begins Here</h1>
                 <h2 class="direction">Sign Up For An Account Below</h2>
                 <form method="get" class="signup__form" onSubmit={this.handleSubmit}>
                     <label htmlFor="user_name" class="signup__label"> Username </label>

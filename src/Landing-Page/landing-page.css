@@ -3,15 +3,15 @@
   }
   
   .landing__page {
-    margin: 20px 50px;
-    padding: 100px 50px 100px 50px;
+    padding: 120px 50px;
   }
-  
-  h1 {
-    font-size: 36px;
+  .app__subheading {
+    font-size: 26px;
     margin: auto;
     text-align: center;
     margin-bottom: 40px;
+    font-family: 'Work Sans', sans-serif;
+    font-weight: bold;
   }
   
   .login__label, .login__input, .submit__button {
@@ -20,15 +20,68 @@
     text-align: center;
     margin-top: 10px;
     margin-bottom: 10px;
+    font-family: 'Lato', sans-serif;
+    width: 200px;
   }
   
   .login__form {
     margin-bottom: 40px;
-    background-color: lightgrey
+    background-color: rgb(6, 20, 102);
+    padding: 20px;
+    color: white;
+    border-bottom-left-radius: 5%;
+    border-bottom-right-radius: 5%;
+    border-top-left-radius: 5%;
+    border-top-right-radius: 5%;
+  }
+
+  .login__input {
+    border: none;
+    padding: 7px;
+    border-radius: 5px;
+  }
+
+  .login__input:focus {
+    outline: none;
+  }
+
+  .login__input:focus::placeholder {
+    color: transparent;
+  }
+
+  .submit__button {
+    width: 200px;
+    background-color: rgb(255, 185, 185);
+    margin-top: 30px;
+    color: black;
+    padding: 7px;
+    border: none;
+    border-radius: 5px;
   }
   
+  .submit__button:hover {
+    background-color:  rgb(252, 120, 120);
+    color: white;
+    transition: 0.3s;
+  }
+
   footer {
     margin: 0;
     padding: 0;
     text-align: center;
+    font-family: 'Lato', sans-serif;
+  }
+
+  a {
+    color: rgb(6, 20, 102);
+    text-decoration: none;
+  }
+
+  a:hover {
+    text-decoration: underline;
+    transition: 0.3s
+  }
+
+  a:active {
+    color: rgb(6, 20, 102)
   }

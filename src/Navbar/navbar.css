@@ -1,11 +1,32 @@
-
-.navbar {
+.Navbar {
+    margin: auto;
     text-align: center;
-    margin-top: 70px;
-    margin-bottom: 70px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgb(6, 20, 102);
 }
 
- .navbar li {
+.app__heading__nav {
+    font-family: 'Work Sans', sans-serif;
+    font-size: 25px;
+    color:  rgb(255, 185, 185)
+}
+
+.Nav__list {
+    display: block;
+    margin-left: 0; 
+    padding-left: 0;
+}
+
+.Nav__list li {
     display: inline-block;
-    padding: 10px;
+    font-family: 'Work Sans', sans-serif;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.Nav__link {
+    color:  rgb(255, 185, 185)
 }

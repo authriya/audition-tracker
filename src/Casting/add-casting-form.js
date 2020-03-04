@@ -1,6 +1,7 @@
 import React from 'react'
 import ApiContext from '../ApiContext'
 import AuditionsApiService from '../services/auditions-api-service'
+import './add-casting-form.css'
 
 class AddCasting extends React.Component {
     constructor(props) {
@@ -76,19 +77,21 @@ class AddCasting extends React.Component {
     }
     render() {
         return (
-            <div className="add__casting__form">
+            <div className="add__casting__form app">
+                <h1 className="app__heading1" id="add__casting__heading">Add a Casting Office or a Casting Director</h1>
+                <h2 className = "app__heading2">Congratulations! You made a new industry connection... </h2>
                 <form method="get" className="add__casting__form" onSubmit = {e => this.handleSubmit(e)}>
-                    <label for="name">Casting Office Name</label>
-                    <input id="name" className="name input" name="name" onChange = {e => this.nameChange(e.target.value)}/>
-                    <label for="address">Address</label>
-                    <input id="address" className="address input" name="address" onChange = {e => this.addressChange(e.target.value)}/>
-                    <label for="email">Email</label>
-                    <input id="email" className="email input" name="email" onChange = {e => this.emailChange(e.target.value)}/>
-                    <label for="associates">Associates</label>
-                    <input id="associates" className="associates input" name="associates" onChange = {e => this.associatesChange(e.target.value)}/>
-                    <label for="preferences">Miscellaneous Preferences</label> 
-                    <input id="preferences" className="preferences input" name="preferences" placeholder="Do they like props? Email or postcards?" onChange = {e => this.preferencesChange(e.target.value)}/>
-                    <input type="submit" value="submit-casting" />
+                    <label className="add__casting__label"for="name">Casting Office Name</label>
+                    <input id="name" className="add__casting__input" name="name" onChange = {e => this.nameChange(e.target.value)}/>
+                    <label htmlFor="address" className="add__casting__label">Address</label>
+                    <input id="address" className="add__casting__input" name="address" onChange = {e => this.addressChange(e.target.value)}/>
+                    <label htmlFor="email" className="add__casting__label">Email</label>
+                    <input id="email" className="add__casting__input" name="email" onChange = {e => this.emailChange(e.target.value)}/>
+                    <label htmlFor="associates" className="add__casting__label">Associates</label>
+                    <input id="associates" className="add__casting__input" name="associates" onChange = {e => this.associatesChange(e.target.value)}/>
+                    <label htmlFor="preferences" className="add__casting__label">Miscellaneous Preferences</label> 
+                    <input id="preferences" className="add__casting__input" name="preferences" placeholder="Do they like props? Email or postcards?" onChange = {e => this.preferencesChange(e.target.value)}/>
+                    <input type="submit" value="Submit Casting" className="submit__casting"/>
                 </form>
             </div>
         )

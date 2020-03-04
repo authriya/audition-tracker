@@ -9,7 +9,7 @@ class CastingList extends React.Component {
     render() {
         const {casting = []} = this.context
         return(
-            <div className="casting__list">
+            <div className="casting__list app">
                 {casting.map(cast => 
                     <li key = {cast.id}>
                     <CastingItem 
@@ -26,7 +26,7 @@ class CastingList extends React.Component {
                     type='button'
                     className='CastingList__add-casting-button'
                     >
-                    + Casting Office
+                    <i class="fas fa-plus"></i> Casting Office
                 </AddButton>
             </div>
         )

@@ -22,7 +22,7 @@ class AuditionPage extends React.Component {
         }
 
         return(
-            <div className="audition__page">
+            <div className="audition__page app">
                 <AuditionItem 
                     id = {auditionPage.id}
                     name = {auditionPage.projectName}

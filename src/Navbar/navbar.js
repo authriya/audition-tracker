@@ -6,7 +6,7 @@ class Navbar extends React.Component{
     render() {
         return(
             <div className ="Navbar">
-                <NavLink className = "Nav__link" to ={'/home'}><h1>Audition Tracker</h1></NavLink>
+                <NavLink className = "Nav__link" to ={'/home'}><h1 className="app__heading__nav">Audition Tracker</h1></NavLink>
                 <ul className ="Nav__list">
                     <li key ="Home">
                         <NavLink

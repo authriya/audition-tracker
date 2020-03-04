@@ -1,36 +1,89 @@
-* {
-    box-sizing: border-box;
-  }
-  
-  body {
-    margin: 20px 50px;
-    padding: 100px 50px 100px 50px;
-  }
-  
-  header {
-    font-size: 36px;
-    margin: auto;
-    text-align: center;
-    margin-bottom: 40px;
-    background-color: darkgrey;
-  }
-  
-  .signup__label, .signup__input, .submit__button {
-    display: block;
-    margin: auto;
-    text-align: center;
-    margin-top: 10px;
-    margin-bottom: 10px;
-  }
-  
-  .signup__form {
-    margin-bottom: 40px;
-    background-color: lightgrey
-  }
-  
-  .direction {
-    font-weight: normal;
-    font-size: 25px;
-    text-align: center;
-  
-  }
+.App__signup {
+  padding: 120px 50px;
+}
+
+.signup__heading {
+  font-size: 26px;
+  margin: auto;
+  text-align: center;
+  margin-bottom: 40px;
+  font-family: 'Work Sans', sans-serif;
+  font-weight: bold;
+}
+
+.direction {
+  font-family: 'Work Sans', sans-serif;
+  font-weight: normal;
+  text-align: center;
+  font-size: 18px;
+  padding-bottom: 20px;
+}
+.signup__label, .signup__input, .submit__button {
+  display: block;
+  margin: auto;
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-family: 'Lato', sans-serif;
+  width: 200px;
+}
+
+.Signup__back-button {
+  display: block;
+  background-color:  rgb(255, 185, 185);
+  margin-bottom: 30px;
+  width: 60px;
+  padding: 10px 5px;
+  border: none;
+  color: black;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.Signup__back-button:hover {
+  text-decoration: none;
+  background-color:  rgb(252, 120, 120);
+  color: white;
+  transition: 0.3s;
+}
+.signup__form {
+  margin-bottom: 40px;
+  background-color: rgb(6, 20, 102);
+  padding: 20px;
+  color: white;
+  border-bottom-left-radius: 5%;
+  border-bottom-right-radius: 5%;
+  border-top-left-radius: 5%;
+  border-top-right-radius: 5%;
+}
+
+.signup__input {
+  border: none;
+  padding: 7px;
+  border-radius: 5px;
+}
+
+.signup__input:focus {
+  outline: none;
+}
+
+.signup__input:focus::placeholder {
+  color: transparent;
+}
+
+.submit__button {
+  width: 200px;
+  background-color: rgb(255, 185, 185);
+  margin-top: 30px;
+  color: black;
+  padding: 7px;
+  border: none;
+  border-radius: 5px;
+}
+
+.submit__button:hover {
+  background-color:  rgb(252, 120, 120);
+  color: white;
+  transition: 0.3s;
+}

@@ -1,0 +1,55 @@
+fieldset{
+    margin: 0;
+    padding: 0;
+    border: none;
+}
+.audition__label {
+    font-family: 'Lato', sans-serif;
+    display: block;
+    padding: 10px 0px;
+}
+
+.audition__input,.audition__label__radio {
+    font-family: 'Lato', sans-serif;
+}
+.audition__input {
+    display: block;
+}
+.audition__input[type=text], .audition__input[type="date"] {
+    border: 1px solid  rgb(6, 20, 102);
+    padding: 5px 5px;
+    width: 250px;
+}
+
+.audition__input:active, .audition__input:focus {
+    outline: none;
+}
+
+select.audition__input {
+    width: 250px;
+}
+#other-notes {
+    display: block;
+}
+.callback, .checkbox {
+    display: inline-block;
+    padding: 20px 0px
+}
+
+.add__audition__submit {
+    border: none;
+    display: block;
+    height: 40px;
+    width: 100px;
+    background-color: rgb(255, 185, 185);
+    color: rgb(6, 20, 102);
+    font-family: 'Work Sans', sans-serif;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+.add__audition__submit:hover, .add__audition__submit:active {
+    background-color:  rgb(252, 120, 120);
+    color: white;
+    transition: 0.3s;
+}
