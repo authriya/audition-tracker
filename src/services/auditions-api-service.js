@@ -110,7 +110,10 @@ const AuditionsApiService = {
   },
   deleteAudition(auditionId) {
     return fetch(`${config.API_ENDPOINT}/auditions/${auditionId}`, {
-      method: 'DELETE'
+      method: 'DELETE',
+      headers: {
+        'authorization': `bearer ${TokenService.getAuthToken()}`,
+      },
     })
   }
 }
