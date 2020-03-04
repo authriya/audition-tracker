@@ -185,7 +185,7 @@ class EditAudition extends React.Component {
                     <span className="audition__input"><input type="radio" id="supporting" name="roleType" value ="Supporting" checked = {this.isCheckedRoleType('Supporting')} onChange = {e => this.roleTypeChange(e.target.value)}/>
                     <label htmlFor="supporting">Supporting</label></span>
                 </fieldset>
-                <label htmlFor="date">
+                <label htmlFor="date" className="audition__label">
                     When was it?
                     <input type="date" id="date" className="audition__input" name="date" value = {this.state.date} onChange = {e => this.dateChange(e.target.value)}/>
                 </label>
@@ -194,7 +194,7 @@ class EditAudition extends React.Component {
                     <input type="text" id="clothing" value = {this.state.clothingNotes} className="audition__input" onChange = {e => this.clothingNotesChange(e.target.value)}/>
                 </fieldset>
                 <fieldset id="rating">
-                    <legend>How'd it go?</legend>
+                    <legend className="audition__label">How'd it go?</legend>
                     <span className="audition__input"><input type="radio" id="star5" name="rating" value="5" checked = {this.isCheckedRating('5')}onChange = {e => this.ratingChange(e.target.value)}/>
                     <label htmlFor="star5" title="Rocks!">5 stars</label></span>
                     <span className="audition__input"><input type="radio" id="star4" name="rating" value="4" checked = {this.isCheckedRating('4')}onChange = {e => this.ratingChange(e.target.value)}/>

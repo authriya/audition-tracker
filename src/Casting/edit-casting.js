@@ -94,7 +94,7 @@ class EditCasting extends React.Component {
     }
     render() {
         return (
-            <div className="edit__casting__form">
+            <div className="edit__casting__form app">
                 <h2 className="app__heading1">Edit Casting</h2>
                 <form method="get" className="add__casting__form" onSubmit = {e => this.handleSubmit(e)}>
                     <label htmlFor="name" className="add__casting__label">Casting Office Name</label>
