@@ -24,7 +24,7 @@ class AuditionList extends React.Component {
                     history = {this.props.history}
                     />
                 </li>)}
-                <div className='NoteListMain__button-container'>
+                <div className='Audition__button-container'>
         <AddButton
           tag={Link}
           to='/add-audition'
