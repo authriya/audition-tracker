@@ -31,3 +31,10 @@ p {
 .by {
   font-style: italic;
 }
+
+@media only screen and (min-width: 800px) {
+  .landing__page {
+    margin-top: 100px;
+    padding: 30px 50px;
+  }
+}

@@ -52,10 +52,7 @@
   background-color: rgb(6, 20, 102);
   padding: 20px;
   color: white;
-  border-bottom-left-radius: 5%;
-  border-bottom-right-radius: 5%;
-  border-top-left-radius: 5%;
-  border-top-right-radius: 5%;
+  border-radius: 5px;
 }
 
 .signup__input {
@@ -86,4 +83,16 @@
   background-color:  rgb(252, 120, 120);
   color: white;
   transition: 0.3s;
+}
+
+@media only screen and (min-width: 600px) {
+  .App__signup {
+    padding: 120px, 100px;
+  }
+}
+
+@media only screen and (min-width: 800px) {
+  .App__signup {
+    padding: 120px, 150px;
+  }
 }

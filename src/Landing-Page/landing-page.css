@@ -29,10 +29,7 @@
     background-color: rgb(6, 20, 102);
     padding: 20px;
     color: white;
-    border-bottom-left-radius: 5%;
-    border-bottom-right-radius: 5%;
-    border-top-left-radius: 5%;
-    border-top-right-radius: 5%;
+    border-radius: 5px;
   }
 
   .login__input {
@@ -84,4 +81,16 @@
 
   a:active {
     color: rgb(6, 20, 102)
+  }
+
+  @media only screen and (min-width: 600px) {
+    .landing__page {
+      padding: 120px, 100px;
+    }
+  }
+
+  @media only screen and (min-width: 800px) {
+    .landing__page {
+      padding: 120px, 150px;
+    }
   }
