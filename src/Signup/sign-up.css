@@ -86,13 +86,58 @@
 }
 
 @media only screen and (min-width: 600px) {
-  .App__signup {
-    padding: 120px, 100px;
+  .main__form {
+    padding: 0px 100px;
+  }
+}
+
+@media only screen and (min-width: 700px) {
+  .main__form {
+    padding: 0px 100px;
   }
 }
 
 @media only screen and (min-width: 800px) {
   .App__signup {
-    padding: 120px, 150px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+  .main__form {
+    padding-left: 200px;
+    padding-right: 200px
+  }
+}
+
+@media only screen and (min-width: 1000px) {
+  .main__form {
+    padding: 30px 300px;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .main__form {
+    padding: 30px 300px;
+  }
+  .signup__heading {
+    font-size: 30px;
+    margin-bottom: 70px;
+  }
+  .direction {
+    font-size: 24px;
+  }
+  .signup__label, .signup__input {
+    width: 350px;
+    margin-bottom: 30px;
+    font-size: 20px
+  }
+  .submit__button {
+    width: 300px;
+    font-size: 20px;
+  }
+  .Signup__back-button {
+    width: 70px;
+    height: 40px;
+    font-size: 20px;
+    text-align: center;
   }
 }

@@ -32,3 +32,9 @@ p.attributes {
     color:rgb(255, 185, 185);
     font-weight: bold;
 }
+
+@media only screen and (min-width: 1200px) {
+    .casting__item {
+        width: 60%
+    }
+  }

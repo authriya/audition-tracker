@@ -85,12 +85,46 @@
 
   @media only screen and (min-width: 600px) {
     .landing__page {
-      padding: 120px, 100px;
+      padding: 120px 150px;
+    }
+  }
+  
+  @media only screen and (min-width: 700px) {
+    .landing__page {
+      padding: 120px 200px;
+    }
+  }
+  
+  @media only screen and (min-width: 800px) {
+    .landing__page {
+      padding: 50px 200px;
     }
   }
 
-  @media only screen and (min-width: 800px) {
+  @media only screen and (min-width: 1000px) {
     .landing__page {
-      padding: 120px, 150px;
+      padding: 100px 300px;
+    }
+  }
+
+  @media only screen and (min-width: 1200px) {
+    .landing__page {
+      padding: 100px 300px;
+    }
+    .app__subheading {
+      font-size: 30px;
+      margin-bottom: 70px;
+    }
+    .login__label, .login__input {
+      width: 350px;
+      margin-bottom: 30px;
+      font-size: 20px
+    }
+    .submit__button {
+      width: 300px;
+      font-size: 20px;
+    }
+    .footer {
+      font-size: 30px;
     }
   }

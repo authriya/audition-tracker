@@ -44,6 +44,7 @@ class SignUp extends React.Component {
                   type='button'
                   className='Signup__back-button'> 
                   <i class="fas fa-angle-left"></i> Back </AddButton>
+              <div className="main__form">
                 <h1 className="signup__heading">Your Acting Journey Begins Here</h1>
                 <h2 class="direction">Sign Up For An Account Below</h2>
                 <form method="get" class="signup__form" onSubmit={this.handleSubmit}>
@@ -53,6 +54,7 @@ class SignUp extends React.Component {
                     <input type="password" id="password" name="password" class="signup__input" placeholder="*****"/>
                     <input type="submit" value="Sign Up" class="submit__button"/>
                 </form>
+              </div>
             </div>
         )
     }
