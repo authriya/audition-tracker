@@ -3,8 +3,8 @@
   }
 
 .app {
-  margin-top: 100px;
-  padding: 30px 20px;
+  margin-top: 150px;
+  padding: 40px 20px;
 }
 
 .app__heading1, .app__heading2 {
@@ -42,10 +42,14 @@ p {
 @media only screen and (min-width: 1200px) {
   .app__info {
     float: left;
-    width: 50%
+    width: 50%;
+    border-bottom: none;
+    padding: 10px
   }
-  .app_inspo {
+  .app__inspo {
     float: right;
-    width: 50%
+    width: 50%;
+    padding: 10px;
+    border-left: 1px dotted black;
   }
 }

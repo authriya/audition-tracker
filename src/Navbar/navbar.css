@@ -31,3 +31,12 @@
 .Nav__link {
     color:  rgb(255, 185, 185)
 }
+
+@media only screen and (min-width: 1200px) {
+    .Nav__list li {
+        font-size: 20px;
+    }
+    .app__heading__nav {
+        font-size: 36px;
+    }
+}

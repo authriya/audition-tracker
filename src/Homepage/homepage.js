@@ -15,7 +15,7 @@ class Homepage extends React.Component {
             <div class="app__inspo">
                 <h1 className="app__heading1">Some inspiration</h1>
                 <h2 className="app__heading2">For when the audition game gets you down</h2>
-                <p>"Know what your job is. About 18 years ago I had this cognition. I realized I was going into auditions trying to get a job, and that simply wasn’t what I was supposed to be doing. An actor is suppose to create a compelling, interesting character that serves the text. You present it in the environment where the audition happens and then you walk away. That’s it. Everything else is out of your control so don’t even think about it or focus on it. You’re not going there to get a job. You’re going there to present what you do. You act. And there it is. And walk away. There’s power in that."</p>
+                <p>"Know what your job is. You’re not going there to get a job. You’re going there to present what you do. You act. And there it is. And walk away. There’s power in that."</p>
                 <p className="by"> - Bryan Cranston</p>
                 <p>“I became an artist and thank God I did, because we are the only profession that celebrates what it means to live a life.”</p>
                 <p className="by"> - Viola Davis</p>

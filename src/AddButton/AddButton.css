@@ -17,3 +17,16 @@
   border-radius: 5px;
   font-family: 'Work Sans', sans-serif;
 }
+
+@media only screen and (min-width: 1200px) {
+  .AuditionList__add-audition-button {
+    height: 70px;
+    width: 140px;
+    font-size: 25px;
+  }
+  .CastingList__add-casting-button {
+    width: 160;
+    height: 80px;
+    font-size: 25px;
+  }
+}
