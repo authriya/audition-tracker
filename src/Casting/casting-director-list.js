@@ -3,6 +3,7 @@ import CastingItem from './casting-item'
 import ApiContext from '../ApiContext'
 import AddButton from '../AddButton/AddButton'
 import {Link} from 'react-router-dom'
+import './casting-director-list.css'
 
 class CastingList extends React.Component {
     static contextType = ApiContext
@@ -10,6 +11,7 @@ class CastingList extends React.Component {
         const {casting = []} = this.context
         return(
             <div className="casting__list app">
+                <ul className="app__list">
                 {casting.map(cast => 
                     <li key = {cast.id}>
                     <CastingItem 
@@ -20,6 +22,7 @@ class CastingList extends React.Component {
                     />
                     </li>
                 )}
+                </ul>
                 <AddButton
                     tag={Link}
                     to='/add-casting'

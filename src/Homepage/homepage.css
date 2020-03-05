@@ -27,3 +27,7 @@ p {
 .app__info {
   border-bottom: 1px dotted black;
 }
+
+.by {
+  font-style: italic;
+}

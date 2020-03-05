@@ -1,0 +1,35 @@
+.casting-name {
+    font-family: 'Work Sans', sans-serif;
+    font-size: 25px;
+}
+
+.casting__item {
+    background-color: rgb(111, 146, 243);
+    color: rgb(6, 20, 102);
+    border-radius: 5px;
+    position: relative;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+p.attributes {
+    font-family: 'Lato', sans-serif;
+}
+
+.edit__button {
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    height: 100%;
+    padding-top: 30px;
+    padding-left: 20px;
+    width: 20%;
+    color:  rgb(255, 185, 185);
+    background-color: rgb(1, 85, 1);
+    text-align: center;
+}
+
+.edit__button a{
+    color:rgb(255, 185, 185);
+    font-weight: bold;
+}

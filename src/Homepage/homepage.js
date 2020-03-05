@@ -8,12 +8,25 @@ class Homepage extends React.Component {
             <div className="app__info">
                 <h1 className="app__heading1">How To Use This App</h1>
                 <h2 className ="app__heading2">Made By An Actor. For Actors.</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quis lectus vitae orci viverra tempus. Sed malesuada leo felis, sit amet tristique velit facilisis sit amet. Fusce tempus mattis elit sit amet efficitur. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nullam venenatis vitae neque vel consectetur. Etiam sollicitudin neque ac vehicula euismod. Fusce quis diam sagittis, mattis mauris sed, congue felis. Fusce lacinia velit sit amet nulla luctus fringilla. Maecenas a fringilla sem.</p>
+                <p>So, it's 9 pm and your agent just emails you that the audition you had 3 weeks ago wants to see you for a callback– and you have no idea what you wore.Or, a prospective manager wants to know which casting directors have called you in previously– and your mind just suddenly blanks. It's been a couple weeks and no one's called you in, and you're convinced everyone hates you, and your career is going nowhere, because there's no way for you to quantify how busy you were before your dry spell. 
+                </p>
+                <p>All these scenarios are likely all too familiar if you, like me, are a regularly auditioning actor. So I set out to solve the problem– with an Audition Tracker. Every time you make a new industry connection- add it to the casting list! Every time you have an audition, post it on your audition page, and assign it to the appropriate casting office so you'll have a list of what they're calling you in for! You can also keep track of what you wore to each audition, so you don't have to worry the dreaded last minute "WHAT ON EARTH WAS I WEARING" panic. It's a pretty great solution for the modern, busy, working actor.</p>
             </div>
             <div class="app__inspo">
                 <h1 className="app__heading1">Some inspiration</h1>
                 <h2 className="app__heading2">For when the audition game gets you down</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quis lectus vitae orci viverra tempus. Sed malesuada leo felis, sit amet tristique velit facilisis sit amet. Fusce tempus mattis elit sit amet efficitur. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nullam venenatis vitae neque vel consectetur. Etiam sollicitudin neque ac vehicula euismod. Fusce quis diam sagittis, mattis mauris sed, congue felis. Fusce lacinia velit sit amet nulla luctus fringilla. Maecenas a fringilla sem.</p>
+                <p>"Know what your job is. About 18 years ago I had this cognition. I realized I was going into auditions trying to get a job, and that simply wasn’t what I was suppose to be doing. An actor is suppose to create a compelling, interesting character that serves the text. You present it in the environment where the audition happens and then you walk away. That’s it. Everything else is out of your control so don’t even think about it or focus on it. You’re not going there to get a job. You’re going there to present what you do. You act. And there it is. And walk away. There’s power in that."</p>
+                <p className="by"> - Bryan Cranston</p>
+                <p>“I became an artist and thank God I did, because we are the only profession that celebrates what it means to live a life.”</p>
+                <p className="by"> - Viola Davis</p>
+                <p>“If you get a chance to act in a room that somebody else has paid rent for, then you’re given a free chance to practice your craft.”</p>
+                <p className="by"> - Phillip Seymour Hoffman</p>
+                <p>“I was armored enough to come out to Hollywood. And I knew that I would get told ‘no' a million times”</p>
+                <p className="by"> - Taraji P. Henson</p>
+                <p>“Goals on the road to achievement cannot be achieved without discipline and consistency.”</p>
+                <p className="by"> - Denzel Washington</p>
+                <p>“Giving voice to characters that have no other voice—that’s the great worth of what we do.”</p>
+                <p className="by"> - Meryl Streep</p>
             </div>
         </div>
         )

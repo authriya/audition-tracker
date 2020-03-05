@@ -12,6 +12,7 @@ class AuditionList extends React.Component {
         const {casting = []} = this.context
         return(
         <div className="audition__list app">
+          <ul className="app__list">
             {auditions.map(audition => 
                 <li key = {audition.id}>
                     <AuditionItem
@@ -20,10 +21,11 @@ class AuditionList extends React.Component {
                     castingOffice = {getCastingForAuditions(casting, audition.castingOffice)}
                     roleType = {audition.roleType}
                     date = {audition.date}
-                    rating = {this.props.rating}
+                    rating = {audition.rating}
                     history = {this.props.history}
                     />
                 </li>)}
+          </ul>
                 <div className='Audition__button-container'>
         <AddButton
           tag={Link}

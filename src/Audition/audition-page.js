@@ -31,9 +31,9 @@ class AuditionPage extends React.Component {
                     date = {auditionPage.date}
                     rating = {auditionPage.rating}
                 />
-                <p className="projectType">{auditionPage.projectType}</p>
-                <p className="clothing__notes">{auditionPage.clothingNotes}</p>
-                <p className="other__notes">{auditionPage.notes}</p>
+                <p className="projectType">Project Type: {auditionPage.projectType}</p>
+                <p className="clothing__notes">Your Outfit: {auditionPage.clothingNotes}</p>
+                <p className="other__notes">Notes: {auditionPage.notes}</p>
             </div>
         )
     }
