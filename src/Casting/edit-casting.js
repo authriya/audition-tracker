@@ -41,14 +41,13 @@ class EditCasting extends React.Component {
             email: castingPage.email,
             associates: castingPage.associates,
             preferences: castingPage.preferences
-        }, console.log(this.state))
+        })
     }
 
     nameChange(name) {
         this.setState({
             name
         })
-        console.log(this.state.name)
     }
 
     addressChange(address) {

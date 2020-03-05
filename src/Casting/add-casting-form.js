@@ -59,8 +59,6 @@ class AddCasting extends React.Component {
             associates: this.state.associates,
             preferences: this.state.preferences
         }
-
-        console.log(castingItem)
         AuditionsApiService.postCasting(castingItem)
             .then(this.context.addCasting(castingItem))
         

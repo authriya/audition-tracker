@@ -54,7 +54,6 @@ class App extends React.Component {
     AuditionsApiService.getCasting()
       .then((casting)=> {
         this.setState({casting})
-        console.log(casting)
       })
       .catch(error => {
         console.error({error})

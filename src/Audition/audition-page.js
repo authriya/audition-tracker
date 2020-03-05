@@ -15,7 +15,6 @@ class AuditionPage extends React.Component {
         const {auditions = []} = this.context
         const {casting = []} = this.context
         const auditionPage = findAudition(auditions, parseInt(auditionId))
-        console.log(auditions)
 
         if (!auditionPage) {
             return null;

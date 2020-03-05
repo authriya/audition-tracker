@@ -29,7 +29,6 @@ class EditAudition extends React.Component {
     static contextType = ApiContext
 
     componentDidMount() {
-        console.log('hi!')
         const {auditionId} = this.props.match.params
         const {auditions = []} = this.context
         const auditionPage = findAudition(auditions, parseInt(auditionId))
@@ -50,7 +49,6 @@ class EditAudition extends React.Component {
             notes: auditionPage.notes,
             callback: false
         })
-        console.log(auditionPage)
     }
 
     castingOfficeChange(castingOffice) {
@@ -138,8 +136,6 @@ class EditAudition extends React.Component {
             notes: this.state.notes,
             callback: this.state.callback
         }
-
-        console.log(auditionNew)
         AuditionsApiService.patchAudition(auditionNew, auditionNew.id)
             .then(this.context.editAudition(auditionNew))
             .then(this.props.history.push('/auditions'))

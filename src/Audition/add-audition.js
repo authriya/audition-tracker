@@ -88,7 +88,6 @@ class AddAuditions extends React.Component {
             notes: this.state.notes,
             callback: this.state.callback
         }
-        console.log(audition)
         AuditionsApiService.postAudition(audition)
             .then((data) => {this.context.addAudition(data)})
             .then(() => {
