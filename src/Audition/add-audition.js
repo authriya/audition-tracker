@@ -112,6 +112,7 @@ class AddAuditions extends React.Component {
     }
     render() {
         const {casting} = this.context
+        const {error} = this.state
 
         return(
             <div className="add__audition__page app">

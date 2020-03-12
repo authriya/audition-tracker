@@ -77,6 +77,7 @@ class AddCasting extends React.Component {
             })
     }
     render() {
+        const {error} = this.state
         return (
             <div className="add__casting__form app">
                 <h1 className="app__heading1" id="add__casting__heading">Add a Casting Office or a Casting Director</h1>
