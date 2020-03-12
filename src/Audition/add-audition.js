@@ -75,6 +75,12 @@ class AddAuditions extends React.Component {
         }))
     }
 
+    updatePage() {
+        if(!this.state.error) {
+            this.props.history.push('/auditions')
+        }
+    }
+
     handleSubmit(e) {
         e.preventDefault();
 
@@ -108,7 +114,9 @@ class AddAuditions extends React.Component {
             .catch(res => {
                 this.setState({ error: res.error })
               })
-            .then(this.props.history.push('/auditions'))
+            .then(
+                this.updatePage()
+            )
     }
     render() {
         const {casting} = this.context
