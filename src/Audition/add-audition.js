@@ -15,7 +15,8 @@ class AddAuditions extends React.Component {
             clothingNotes: '',
             rating: '',
             notes: '',
-            callback: false
+            callback: false,
+            error: null
         }
     }
     static contextType = ApiContext
@@ -88,6 +89,7 @@ class AddAuditions extends React.Component {
             notes: this.state.notes,
             callback: this.state.callback
         }
+        this.setState({ error: null })
         AuditionsApiService.postAudition(audition)
             .then((data) => {this.context.addAudition(data)})
             .then(() => {
@@ -104,6 +106,9 @@ class AddAuditions extends React.Component {
                 })
             })
             .then(this.props.history.push('/auditions'))
+            .catch(res => {
+                this.setState({ error: res.error })
+              })
     }
     render() {
         const {casting} = this.context
@@ -112,6 +117,7 @@ class AddAuditions extends React.Component {
             <div className="add__audition__page app">
             <h2 className="app__heading1"> Add An Audition </h2>
             <h3 className="app__heading2">You're one step closer...</h3>
+            {!!error && <div role="alert" className="alert"><p className="alert__text">{error}</p></div>}
             <form method="get" className="add__audition__form" onSubmit = {e => this.handleSubmit(e)}>
                 <label htmlFor="casting-office" className="audition__label">Who called you in?</label>
                 <select name="casting-office" id="casting-office" className="audition__input" onChange = {e => this.castingOfficeChange(e.target.value)}>
@@ -171,7 +177,7 @@ class AddAuditions extends React.Component {
                 <input type="text" className="audition__input" id="other-notes" name="other-notes" onChange = {e => this.notesChange(e.target.value)}/>
                 <label htmlFor ="callback__checkbox" className="audition__label__radio callback">Callback?</label>
                 <input type="checkbox" id="callback__checkbox" name="callback__checkbox" className="checkbox" onChange = {e => this.callbackChange()}/>
-                <input type="submit" value="Submit Audition" name="submit" className="add__audition__submit"/>
+                <button disabled={!!error} type="submit" value="Submit Audition" name="submit" className="add__audition__submit">Submit Audition</button>
             </form>
             </div>
         )

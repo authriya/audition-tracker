@@ -41,7 +41,7 @@ class LandingPage extends React.Component {
       const {error} = this.state
         return(
             <div className="landing__page">
-              {error && <div role="alert" className="alert"><p className="alert__text">{error}</p></div>}
+              {!!error && <div role="alert" className="alert"><p className="alert__text">{error}</p></div>}
                 <h1 className="app__subheading">Log in to Your Audition Tracker</h1>
                 <main>
                     <form method="get" className="login__form" onSubmit = {this.handleSubmitJwtAuth}>

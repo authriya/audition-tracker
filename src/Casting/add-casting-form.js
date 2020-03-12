@@ -11,7 +11,8 @@ class AddCasting extends React.Component {
             address: '',
             email: '',
             associates: '',
-            preferences: ''
+            preferences: '',
+            error: null
         }
     }
 
@@ -49,16 +50,15 @@ class AddCasting extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
-        const {casting} = this.context
 
         const castingItem = {
-            id: (casting.length +1).toString(),
             name: this.state.name,
             address: this.state.address,
             email: this.state.email,
             associates: this.state.associates,
             preferences: this.state.preferences
         }
+        this.setState({ error: null })
         AuditionsApiService.postCasting(castingItem)
             .then(this.context.addCasting(castingItem))
         
@@ -72,12 +72,16 @@ class AddCasting extends React.Component {
                     }), 1000
             )})
             .then(this.props.history.push('/casting'))
+            .catch(res => {
+                this.setState({ error: res.error })
+            })
     }
     render() {
         return (
             <div className="add__casting__form app">
                 <h1 className="app__heading1" id="add__casting__heading">Add a Casting Office or a Casting Director</h1>
                 <h2 className = "app__heading2">Congratulations! You made a new industry connection... </h2>
+                {!!error && <div role="alert" className="alert"><p className="alert__text">{error}</p></div>}
                 <form method="get" className="add__casting__form" onSubmit = {e => this.handleSubmit(e)}>
                     <label className="add__casting__label"for="name">Casting Office Name</label>
                     <input id="name" className="add__casting__input" name="name" onChange = {e => this.nameChange(e.target.value)}/>
@@ -89,7 +93,7 @@ class AddCasting extends React.Component {
                     <input id="associates" className="add__casting__input" name="associates" onChange = {e => this.associatesChange(e.target.value)}/>
                     <label htmlFor="preferences" className="add__casting__label">Miscellaneous Preferences</label> 
                     <input id="preferences" className="add__casting__input" name="preferences" placeholder="Do they like props? Email or postcards?" onChange = {e => this.preferencesChange(e.target.value)}/>
-                    <input type="submit" value="Submit Casting" className="submit__casting"/>
+                    <button disabled={!!error} type="submit" value="Submit Casting" className="submit__casting">Submit Casting</button>
                 </form>
             </div>
         )

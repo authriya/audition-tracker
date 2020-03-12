@@ -46,7 +46,7 @@ class SignUp extends React.Component {
                   className='Signup__back-button'> 
                   <i class="fas fa-angle-left"></i> Back </AddButton>
               <div className="main__form">
-                <div role="alert" className= "alert__div">{error && <p className="alert__box">{error}</p>}</div>
+              {!!error && <div role="alert" className="alert"><p className="alert__text">{error}</p></div>}
                 <h1 className="signup__heading">Your Acting Journey Begins Here</h1>
                 <h2 class="direction">Sign Up For An Account Below</h2>
                 <form method="get" class="signup__form" onSubmit={this.handleSubmit}>
@@ -54,7 +54,7 @@ class SignUp extends React.Component {
                     <input type="text" id="user_name" name="user_name" class="signup__input" placeholder="nicole_kidman"/>
                     <label htmlFor="password" class="signup__label">Password</label>
                     <input type="password" id="password" name="password" class="signup__input" placeholder="*****"/>
-                    <input type="submit" value="Sign Up" class="submit__button"/>
+                    <button disabled={!!error} type="submit" value="Sign Up" class="submit__button">Sign Up</button>
                 </form>
               </div>
             </div>
