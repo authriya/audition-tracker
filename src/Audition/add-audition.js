@@ -105,10 +105,10 @@ class AddAuditions extends React.Component {
                     callback: false
                 })
             })
-            .then(this.props.history.push('/auditions'))
             .catch(res => {
                 this.setState({ error: res.error })
               })
+            .then(this.props.history.push('/auditions'))
     }
     render() {
         const {casting} = this.context

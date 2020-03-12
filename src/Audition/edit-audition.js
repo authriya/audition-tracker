@@ -141,10 +141,10 @@ class EditAudition extends React.Component {
 
         AuditionsApiService.patchAudition(auditionNew, auditionNew.id)
             .then(this.context.editAudition(auditionNew))
-            .then(this.props.history.push('/auditions'))
             .catch(res => {
                 this.setState({error: res.error})
             })
+            .then(this.props.history.push('/auditions'))
     }
 
     render() {

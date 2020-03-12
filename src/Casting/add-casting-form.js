@@ -71,10 +71,10 @@ class AddCasting extends React.Component {
                     preferences: ''
                     }), 1000
             )})
-            .then(this.props.history.push('/casting'))
             .catch(res => {
                 this.setState({ error: res.error })
             })
+            .then(this.props.history.push('/casting'))
     }
     render() {
         const {error} = this.state
