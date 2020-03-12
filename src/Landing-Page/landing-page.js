@@ -10,7 +10,9 @@ class LandingPage extends React.Component {
           }
     }
 
-    state = { error: null }
+    state = { 
+      error: null
+     }
 
     handleLoginSuccess = () => {
         this.props.history.push('/home')
@@ -36,8 +38,10 @@ class LandingPage extends React.Component {
       }
 
     render() {
+      const {error} = this.state
         return(
             <div className="landing__page">
+              {error && <div role="alert" className="alert"><p className="alert__text">{error}</p></div>}
                 <h1 className="app__subheading">Log in to Your Audition Tracker</h1>
                 <main>
                     <form method="get" className="login__form" onSubmit = {this.handleSubmitJwtAuth}>
@@ -45,7 +49,7 @@ class LandingPage extends React.Component {
                         <input type="text" id="user_name" name="user_name" className="login__input" placeholder="nicole_kidman"/>
                         <label htmlFor="password" className="login__label">Password</label>
                         <input type="password" id="password" name="password" className="login__input" placeholder="*****"/>
-                        <input type="submit" value="submit" className="submit__button"/>
+                        <button disabled={!!error} type="submit" value="submit" className="submit__button">Log In</button>
                     </form>
                 </main>
                 <footer>Need an account? Click <Link to = {'/signup'}>here</Link> to sign up.</footer>

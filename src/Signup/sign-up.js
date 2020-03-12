@@ -36,6 +36,7 @@ class SignUp extends React.Component {
       }
     
     render() {
+      const {error} = this.state
         return(
             <div className ="App__signup">
                 <AddButton
@@ -45,6 +46,7 @@ class SignUp extends React.Component {
                   className='Signup__back-button'> 
                   <i class="fas fa-angle-left"></i> Back </AddButton>
               <div className="main__form">
+                <div role="alert" className= "alert__div">{error && <p className="alert__box">{error}</p>}</div>
                 <h1 className="signup__heading">Your Acting Journey Begins Here</h1>
                 <h2 class="direction">Sign Up For An Account Below</h2>
                 <form method="get" class="signup__form" onSubmit={this.handleSubmit}>

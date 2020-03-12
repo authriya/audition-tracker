@@ -83,6 +83,14 @@
     color: rgb(6, 20, 102)
   }
 
+  .alert {
+    padding: 20px;
+    background-color: #dd7d7d;
+    border: solid red 1px;
+    border-radius: 5px;
+    color: darkred;
+  }
+
   @media only screen and (min-width: 600px) {
     .landing__page {
       padding: 120px 150px;
