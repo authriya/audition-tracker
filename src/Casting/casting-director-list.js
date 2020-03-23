@@ -29,7 +29,7 @@ class CastingList extends React.Component {
                     type='button'
                     className='CastingList__add-casting-button'
                     >
-                    <i class="fas fa-plus"></i> Casting Office
+                    <i className="fas fa-plus"></i> Casting Office
                 </AddButton>
             </div>
         )

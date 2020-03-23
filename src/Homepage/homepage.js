@@ -12,7 +12,7 @@ class Homepage extends React.Component {
                 </p>
                 <p>All these scenarios are likely all too familiar if you, like me, are a regularly auditioning actor. So I set out to solve the problem– with an Audition Tracker. Every time you make a new industry connection- add it to the casting list! Every time you have an audition, post it on your audition page, and assign it to the appropriate casting office so you'll have a list of what they're calling you in for! You can also keep track of what you wore to each audition, so you don't have to worry the dreaded last minute "WHAT ON EARTH WAS I WEARING" panic. It's a pretty great solution for the modern, busy, working actor.</p>
             </div>
-            <div class="app__inspo">
+            <div className="app__inspo">
                 <h1 className="app__heading1">Some inspiration</h1>
                 <h2 className="app__heading2">For when the audition game gets you down</h2>
                 <p>"Know what your job is. You’re not going there to get a job. You’re going there to present what you do. You act. And there it is. And walk away. There’s power in that."</p>

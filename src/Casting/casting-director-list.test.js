@@ -2,14 +2,14 @@ import React from 'react';
 
 import ReactDOM from 'react-dom';
 
-import App from './App';
+import CastingList from './casting-director-list'
 
 import {BrowserRouter} from "react-router-dom";
 
 it('renders without crashing', () => {
   const div = document.createElement('div');
 
-  ReactDOM.render(<BrowserRouter><App /></BrowserRouter>, div);
+  ReactDOM.render(<BrowserRouter><CastingList/></BrowserRouter>, div);
 
   ReactDOM.unmountComponentAtNode(div);
 });

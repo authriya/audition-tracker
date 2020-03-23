@@ -84,7 +84,7 @@ class AddCasting extends React.Component {
                 <h2 className = "app__heading2">Congratulations! You made a new industry connection... </h2>
                 {!!error && <div role="alert" className="alert"><p className="alert__text">{error}</p></div>}
                 <form method="get" className="add__casting__form" onSubmit = {e => this.handleSubmit(e)}>
-                    <label className="add__casting__label"for="name">Casting Office Name</label>
+                    <label className="add__casting__label" htmlFor="name">Casting Office Name</label>
                     <input id="name" className="add__casting__input" name="name" onChange = {e => this.nameChange(e.target.value)} required/>
                     <label htmlFor="address" className="add__casting__label">Address</label>
                     <input id="address" className="add__casting__input" name="address" onChange = {e => this.addressChange(e.target.value)} required/>

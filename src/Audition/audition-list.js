@@ -33,7 +33,7 @@ class AuditionList extends React.Component {
           type='button'
           className='AuditionList__add-audition-button'
         >
-        <i class="fas fa-plus"></i> Audition
+        <i className="fas fa-plus"></i> Audition
         </AddButton>
       </div>
         </div>

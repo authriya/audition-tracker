@@ -6,7 +6,7 @@ import {getAuditionsForCasting, findCasting} from '../route-helpers'
 import './casting-page.css'
 
 class CastingPage extends React.Component {
-    defaultProps = {
+    static defaultProps = {
         match: {
             params: {}
         }

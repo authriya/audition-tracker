@@ -295,7 +295,7 @@ class AddAuditions extends React.Component {
                     <span className="audition__input"><input type="radio" id="star1" name="rating" value="1" onClick = {e => this.ratingChange(e.target.value)} required/>
                     <label htmlFor="star1" title="Sucks big time"className="audition__label__radio">1 star</label></span>
                 </fieldset>
-                <label className="audition__label" for="other-notes">Other Notes</label>
+                <label className="audition__label" htmlFor="other-notes">Other Notes</label>
                 <input type="text" className="audition__input" id="other-notes" name="other-notes" onChange = {e => this.notesChange(e.target.value)}/>
                 <label htmlFor ="callback__checkbox" className="audition__label__radio callback">Callback?</label>
                 <input type="checkbox" id="callback__checkbox" name="callback__checkbox" className="checkbox" onChange = {e => this.callbackChange()}/>
