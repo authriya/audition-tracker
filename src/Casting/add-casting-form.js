@@ -85,16 +85,16 @@ class AddCasting extends React.Component {
                 {!!error && <div role="alert" className="alert"><p className="alert__text">{error}</p></div>}
                 <form method="get" className="add__casting__form" onSubmit = {e => this.handleSubmit(e)}>
                     <label className="add__casting__label"for="name">Casting Office Name</label>
-                    <input id="name" className="add__casting__input" name="name" onChange = {e => this.nameChange(e.target.value)}/>
+                    <input id="name" className="add__casting__input" name="name" onChange = {e => this.nameChange(e.target.value)} required/>
                     <label htmlFor="address" className="add__casting__label">Address</label>
-                    <input id="address" className="add__casting__input" name="address" onChange = {e => this.addressChange(e.target.value)}/>
+                    <input id="address" className="add__casting__input" name="address" onChange = {e => this.addressChange(e.target.value)} required/>
                     <label htmlFor="email" className="add__casting__label">Email</label>
-                    <input id="email" className="add__casting__input" name="email" onChange = {e => this.emailChange(e.target.value)}/>
+                    <input id="email" className="add__casting__input" name="email" onChange = {e => this.emailChange(e.target.value)} required/>
                     <label htmlFor="associates" className="add__casting__label">Associates</label>
-                    <input id="associates" className="add__casting__input" name="associates" onChange = {e => this.associatesChange(e.target.value)}/>
+                    <input id="associates" className="add__casting__input" name="associates" onChange = {e => this.associatesChange(e.target.value)} required/>
                     <label htmlFor="preferences" className="add__casting__label">Miscellaneous Preferences</label> 
-                    <input id="preferences" className="add__casting__input" name="preferences" placeholder="Do they like props? Email or postcards?" onChange = {e => this.preferencesChange(e.target.value)}/>
-                    <button disabled={!!error} type="submit" value="Submit Casting" className="submit__casting">Submit Casting</button>
+                    <input id="preferences" className="add__casting__input" name="preferences" placeholder="Do they like props? Email or postcards?" onChange = {e => this.preferencesChange(e.target.value)} required/>
+                    <button type="submit" value="Submit Casting" className="submit__casting">Submit Casting</button>
                 </form>
             </div>
         )

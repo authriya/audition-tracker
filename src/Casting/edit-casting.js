@@ -98,15 +98,15 @@ class EditCasting extends React.Component {
                 <h2 className="app__heading1">Edit Casting</h2>
                 <form method="get" className="add__casting__form" onSubmit = {e => this.handleSubmit(e)}>
                     <label htmlFor="name" className="add__casting__label">Casting Office Name</label>
-                    <input id="name" className="add__casting__input" name="name" value = {this.state.name} onChange = {e => this.nameChange(e.target.value)}/>
+                    <input id="name" className="add__casting__input" name="name" value = {this.state.name} onChange = {e => this.nameChange(e.target.value)} required/>
                     <label htmlFor="address" className="add__casting__label">Address</label>
-                    <input id="address" className="add__casting__input" name="address" value={this.state.address} onChange = {e => this.addressChange(e.target.value)}/>
+                    <input id="address" className="add__casting__input" name="address" value={this.state.address} onChange = {e => this.addressChange(e.target.value)} required/>
                     <label htmlFor="email" className="add__casting__label">Email</label>
-                    <input id="email" className="add__casting__input" name="email" value = {this.state.email} onChange = {e => this.emailChange(e.target.value)}/>
+                    <input id="email" className="add__casting__input" name="email" value = {this.state.email} onChange = {e => this.emailChange(e.target.value)} required/>
                     <label htmlFor="associates"className="add__casting__label">Associates</label>
-                    <input id="associates" className="add__casting__input" name="associates" value = {this.state.associates} onChange = {e => this.associatesChange(e.target.value)}/>
+                    <input id="associates" className="add__casting__input" name="associates" value = {this.state.associates} onChange = {e => this.associatesChange(e.target.value)} required/>
                     <label htmlFor="preferences"className="add__casting__label">Miscellaneous Preferences</label> 
-                    <input id="preferences" className="add__casting__input" name="preferences" value = {this.state.preferences} onChange = {e => this.preferencesChange(e.target.value)}/>
+                    <input id="preferences" className="add__casting__input" name="preferences" value = {this.state.preferences} onChange = {e => this.preferencesChange(e.target.value)} required/>
                     <input type="submit" value="Submit Casting" className="submit__casting"/>
                 </form>
             </div>
