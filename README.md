@@ -92,4 +92,5 @@ The API uses conventional HTTP response codes for error signalling. Common error
 Tech Used
 ---------
 Client: ReactJS, React Router, JSX, Javascript, JSON, HTML, CSS
+
 API: Javascript, Node, Express, JWT Authentication, RESTful APIs, Helmet, XSS, Morgan, Postgres, PSQL, DBeaver, CORS, knex, Chai 
