@@ -1,68 +1,95 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+AUDITION TRACKER
+================
 
-## Available Scripts
+Link to Live Website
+--------------------
+https://audition-tracker.now.sh/
 
-In the project directory, you can run:
+About the App
+-------------
+## Made By An Actor. For Actors.
+So, it's 9 pm and your agent just emails you that the audition you had 3 weeks ago wants to see you for a callback– and you have no idea what you wore.Or, a prospective manager wants to know which casting directors have called you in previously– and your mind just suddenly blanks. It's been a couple weeks and no one's called you in, and you're convinced everyone hates you, and your career is going nowhere, because there's no way for you to quantify how busy you were before your dry spell.
 
-### `npm start`
+All these scenarios are likely all too familiar if you, like me, are a regularly auditioning actor. So I set out to solve the problem– with an Audition Tracker.
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+![/home screenshot](./screenshots/home.png "Home Page")
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+Peep all that great inspiration on the right! 
 
-### `npm test`
+Click on the Casting tab in the navbar– you'll see all your industry connections with all their contact info:
+![/casting screenshot](./screenshots/Casting-List.png "Casting List")
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Every time you make a new industry connection- add it to the casting list, by clicking on the "+ Casting Office" button:
+![/add-casting screenshot](./screenshots/Add-Casting.png "Add Casting Page")
 
-### `npm run build`
+You can see which auditions a casting office has called you in for by clicking on their box:
+![/casting/:castingId screenshot](./screenshots/Casting-Page.png "Casting Page")
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Then under the Auditions tab on the Navbar you'll see all your auditions:
+![/auditions screenshot](./screenshots/Audition-List.png "Audition List")
+ 
+Every time you have an audition, post it on your audition page by clicking the "+Audition" button. It's required to assign every audition to the appropriate Casting Office, so if it's a new office, remember to add their info first, as detailed above:
+![/add-audition screenshot](./screenshots/Add-Audition.png "Add Audition Page")
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+You can also keep track of what you wore to each audition (so you don't have to worry the dreaded last minute "WHAT ON EARTH WAS I WEARING" panic) and other info– just click on the audition and you'll pull up all its info:
+![/auditions/:auditionId screenshot](./screenshots/Audition-Page.png "Audition Page")
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+API Documentation
+-----------------
 
-### `npm run eject`
+## Demo Account
+Username: test_user
+Password: Testtest@123
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## Authentication 
+Log in with your account at https://audition-tracker.now.sh/ or sign up for an account at https://audition-tracker.now.sh/signup. The app uses automatically generated API bearer tokens to authenticate your credentials and allow you to access your data.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## Endpoints
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+*Endpoints Without Authentication*
 
-## Learn More
+POST '/api/users' - Post a new user 
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+POST '/api/auth/login' - Authenticate log in
 
-To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Code Splitting
+*Endpoints With Authentication*
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+GET '/api/auditions' - Gets all auditions of a user
 
-### Analyzing the Bundle Size
+POST '/api/auditions' - Posts a new audition
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+GET '/api/auditoins/:auditionId' - Get an audition by ID
 
-### Making a Progressive Web App
+DELETE '/api/auditoins/:auditionId' - Delete audition with the ID
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+PATCH '/api/auditions/:auditionId' - Update audition with the ID
 
-### Advanced Configuration
+GET '/api/casting' - Gets all casting of a user
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
+POST '/api/casting' - Posts a new casting director/office
 
-### Deployment
+GET '/api/casting/:castingId' - Gets a particular casting by ID
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
+PATCH '/api/casting/:castingId' - Deletes casting with the ID
 
-### `npm run build` fails to minify
+## Errors
+The API uses conventional HTTP response codes for error signalling. Common error codes are as follows:
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+200- OK 
+
+400- Bad request, often due to missing parameter
+
+401- Unauthorized, no valid API key. Log back in with credentials or sign up for an account if you don't have one.
+
+403- Forbidden, your API key doesn't have the credentials to perform this request
+
+404- Not found, bad endpoint. Check for typos.
+
+500, 502, 503, 504 - Server Errors	Something went wrong on the API's end.
+
+Tech Used
+---------
+Client: ReactJS, React Router, JSX, Javascript, JSON, HTML, CSS
+API: Javascript, Node, Express, JWT Authentication, RESTful APIs, Helmet, XSS, Morgan, Postgres, PSQL, DBeaver, CORS, knex, Chai 
