@@ -11,6 +11,12 @@ class SignUp extends React.Component {
       }
 
     state = { error: null }
+
+    setError() {
+      this.setState({
+        error: null
+      })
+    }
     
     handleSignUpSuccess = user => {
         const { history } = this.props
@@ -51,12 +57,13 @@ class SignUp extends React.Component {
                 <h2 className="direction">Sign Up For An Account Below</h2>
                 <form method="get" className="signup__form" onSubmit={this.handleSubmit}>
                     <label htmlFor="user_name" className="signup__label"> Username </label>
-                    <input type="text" id="user_name" name="user_name" className="signup__input" placeholder="nicole_kidman"/>
+                    <input type="text" id="user_name" name="user_name" className="signup__input" placeholder="nicole_kidman" onChange={e => this.setError()}/>
                     <label htmlFor="password" className="signup__label">Password</label>
-                    <input type="password" id="password" name="password" className="signup__input" placeholder="*****"/>
+                    <input type="password" id="password" name="password" className="signup__input" placeholder="*****" onChange={e => this.setError()}/>
                     <button disabled={!!error} type="submit" value="Sign Up" className="submit__button">Sign Up</button>
                 </form>
               </div>
+              <footer>Made an account? Click <Link to = {'/'}>here</Link> to log in.</footer>
             </div>
         )
     }

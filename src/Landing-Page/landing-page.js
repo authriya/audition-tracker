@@ -43,6 +43,7 @@ class LandingPage extends React.Component {
             <div className="landing__page">
               {!!error && <div role="alert" className="alert"><p className="alert__text">{error}</p></div>}
                 <h1 className="app__subheading">Log in to Your Audition Tracker</h1>
+                <p>Use your audition tracker to note down your auditions, and store all your audition details. To get started, create an account <Link to = {'/signup'}>here</Link>. To log in to the test account, use the username test_user with the password Testtest@123</p>
                 <main>
                     <form method="get" className="login__form" onSubmit = {this.handleSubmitJwtAuth}>
                         <label htmlFor="user_name" className="login__label"> Username </label>
