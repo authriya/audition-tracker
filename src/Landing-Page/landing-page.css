@@ -91,6 +91,10 @@
     color: darkred;
   }
 
+  span.bold {
+    font-weight: bold;
+  }
+
   @media only screen and (min-width: 600px) {
     .landing__page {
       padding: 120px 150px;

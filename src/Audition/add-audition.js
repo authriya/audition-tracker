@@ -7,34 +7,13 @@ class AddAuditions extends React.Component {
     constructor(props) {
         super(props); 
         this.state = {
-            castingOffice: {
-                value: '',
-                touched: false
-            },
-            projectName: {
-                value: '',
-                touched: false
-            },
-            projectType: {
-                value: '',
-                touched: false
-            },
-            roleType: {
-                value: '',
-                touched: false
-            },
-            date: {
-                value: '',
-                touched: false
-            },
-            clothingNotes: {
-                value: '',
-                touched: false
-            },
-            rating: {
-                value: '',
-                touched: false
-            },
+            castingOffice:'',
+            projectName: '',
+            projectType:'',
+            roleType: '',
+            date: '',
+            clothingNotes: '',
+            rating:'',
             notes: '',
             callback: false,
             error: null
@@ -43,109 +22,43 @@ class AddAuditions extends React.Component {
     static contextType = ApiContext
 
     castingOfficeChange(castingOffice) {
-        this.setState({
-            castingOffice: {
-                value: castingOffice,
-                touched: true
-            }
-        })
-    }
-
-    validateCasting() {
-        if(this.state.castingOffice.value.trim().length === 0) {
-            return 'Casting Office is required'
-        }
+        this.setState({castingOffice})
     }
 
     projectNameChange(projectName) {
         this.setState({
-            projectName: {
-                value: projectName,
-                touched: true
-            }
+            projectName
         })
-    }
-
-    validateName() {
-        if(this.state.projectName.value.trim().length === 0) {
-            return 'Project Name is required'
-        }
     }
 
     projectTypeChange(projectType) {
         this.setState({
-            projectType: {
-                value: projectType,
-                touched: true
-            }
+            projectType
         })
-    }
-
-    validateProjectType() {
-        if(this.state.projectType.value.trim().length === 0) {
-            return 'Project Type is Required'
-        }
     }
 
     roleTypeChange(roleType) {
         this.setState({
-            roleType: {
-                value: roleType,
-                touched: true
-            }
+            roleType
         })
-    }
-
-    validateRoleType() {
-        if(this.state.roleType.value.trim().length === 0) {
-            return 'Role Type is required'
-        }
     }
 
     dateChange(date) {
         this.setState({
-            date: {
-                value: date,
-                touched: true
-            }
+            date
         })
-    }
-
-    validateDate() {
-        if(this.state.date.value.trim().length === 0) {
-            return 'Date is required'
-        }
     }
 
     clothingNotesChange(clothingNotes) {
         this.setState({
-            clothingNotes: {
-                value: clothingNotes,
-                touched: true
-            }
+            clothingNotes
         })
-    }
-
-
-    validateClothingNotes() {
-        if(this.state.clothingNotes.value.trim().length === 0) {
-            return 'Clothing Notes is required'
-        }
     }
 
     ratingChange(rating) {
         this.setState({
-            rating: {
-                value: rating,
-                touched: true
-            }
+            rating
         })
-    }
-
-    validateRating() {
-        if(this.state.clothingNotes.value.trim().length===0) {
-            return 'Rating is required'
-        }
     }
 
     notesChange(notes) {
@@ -164,13 +77,13 @@ class AddAuditions extends React.Component {
         e.preventDefault();
 
         const audition = {
-            castingOffice: this.state.castingOffice.value,
-            projectName: this.state.projectName.value,
-            projectType: this.state.projectType.value,
-            roleType: this.state.roleType.value,
-            date: this.state.date.value,
-            clothingNotes: this.state.clothingNotes.value,
-            rating: this.state.rating.value,
+            castingOffice: this.state.castingOffice,
+            projectName: this.state.projectName,
+            projectType: this.state.projectType,
+            roleType: this.state.roleType,
+            date: this.state.date,
+            clothingNotes: this.state.clothingNotes,
+            rating: this.state.rating,
             notes: this.state.notes,
             callback: this.state.callback
         }
@@ -186,36 +99,16 @@ class AddAuditions extends React.Component {
             })
             .then((data) => {
                 this.setState({
-                    castingOffice: {
-                        value: '',
-                        touched: false
-                    },
-                    projectName: {
-                        value: '',
-                        touched: false
-                    },
-                    projectType: {
-                        value: '',
-                        touched: false
-                    },
-                    roleType: {
-                        value: '',
-                        touched: false
-                    },
-                    date: {
-                        value: '',
-                        touched: false
-                    },
-                    clothingNotes: {
-                        value: '',
-                        touched: false
-                    },
-                    rating: {
-                        value: '',
-                        touched: false
-                    },
+                    castingOffice:'',
+                    projectName: '',
+                    projectType:'',
+                    roleType: '',
+                    date: '',
+                    clothingNotes: '',
+                    rating:'',
                     notes: '',
-                    callback: false})
+                    callback: false,
+                    })
                 this.context.addAudition(data)
                 this.props.history.push('/auditions')
             })
