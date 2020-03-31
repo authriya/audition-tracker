@@ -164,13 +164,13 @@ class AddAuditions extends React.Component {
         e.preventDefault();
 
         const audition = {
-            castingOffice: this.state.castingOffice,
-            projectName: this.state.projectName,
-            projectType: this.state.projectType,
-            roleType: this.state.roleType,
-            date: this.state.date,
-            clothingNotes: this.state.clothingNotes,
-            rating: this.state.rating,
+            castingOffice: this.state.castingOffice.value,
+            projectName: this.state.projectName.value,
+            projectType: this.state.projectType.value,
+            roleType: this.state.roleType.value,
+            date: this.state.date.value,
+            clothingNotes: this.state.clothingNotes.value,
+            rating: this.state.rating.value,
             notes: this.state.notes,
             callback: this.state.callback
         }
@@ -226,13 +226,6 @@ class AddAuditions extends React.Component {
     render() {
         const {casting} = this.context
         const {error} = this.state
-        const castingError = this.validateCasting();
-        const nameError = this.validateName();
-        const pTypeError = this.validateProjectType();
-        const rTypeError = this.validateRoleType();
-        const dateError = this.validateDate();
-        const clothingError = this.validateClothingNotes();
-        const ratingError = this.validateRating();
 
         return(
             <div className="add__audition__page app">
