@@ -91,7 +91,7 @@ class AddAuditions extends React.Component {
         }
 
         this.setState({error: null})
-        
+
         AuditionsApiService.postAudition(audition)
             .then(res => {
                 if(!res.ok) {
@@ -102,20 +102,21 @@ class AddAuditions extends React.Component {
                 return res.json()
             })
             .then((data) => {
-                this.setState({
-                    castingOffice:'',
-                    projectName: '',
-                    projectType:'',
-                    roleType: '',
-                    date: '',
-                    clothingNotes: '',
-                    rating:'',
-                    notes: '',
-                    callback: false,
-                    })
                 this.context.addAudition(data)
-                this.props.history.push('/auditions')
             })
+            .then(                
+                this.setState({
+                castingOffice:'',
+                projectName: '',
+                projectType:'',
+                roleType: '',
+                date: '',
+                clothingNotes: '',
+                rating:'',
+                notes: '',
+                callback: false,
+                }))
+            .then(this.props.history.push('/auditions'))
             .catch(res => {
                 this.setState({ error: res.error })
               })
@@ -130,7 +131,7 @@ class AddAuditions extends React.Component {
             <div className="creation__hint">* required field</div>
             <form method="get" className="add__audition__form" onSubmit = {e => this.handleSubmit(e)}>
                 <label htmlFor="casting-office" className="audition__label">Who called you in? *</label>
-                <select name="casting-office" id="casting-office" className="audition__input" onClick = {e => this.castingOfficeChange(e.target.value)} required>
+                <select name="casting-office" id="casting-office" className="audition__input" onChange = {e => this.castingOfficeChange(e.target.value)} required>
                     <option value = ''>...</option>
                     {casting.map(cast => (
                         <option key = {cast.id} value = {cast.id}>{cast.name}</option>

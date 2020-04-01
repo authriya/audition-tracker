@@ -42,6 +42,10 @@
     outline: none;
   }
 
+  p.intro {
+    text-align: center;
+  }
+
   .login__input:focus::placeholder {
     color: transparent;
   }
