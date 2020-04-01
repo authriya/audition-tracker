@@ -92,7 +92,6 @@ class EditCasting extends React.Component {
             .then(this.props.history.push('/casting'))
     }
     render() {
-        const {error} = this.state
         return (
             <div className="edit__casting__form app">
                 <h2 className="app__heading1">Edit Casting</h2>

@@ -7,13 +7,13 @@ class AddAuditions extends React.Component {
     constructor(props) {
         super(props); 
         this.state = {
-            castingOffice:'',
+            castingOffice: '',
             projectName: '',
-            projectType:'',
+            projectType: '',
             roleType: '',
             date: '',
             clothingNotes: '',
-            rating:'',
+            rating: '',
             notes: '',
             callback: false,
             error: null
@@ -22,7 +22,9 @@ class AddAuditions extends React.Component {
     static contextType = ApiContext
 
     castingOfficeChange(castingOffice) {
-        this.setState({castingOffice})
+        this.setState({
+            castingOffice
+        })
     }
 
     projectNameChange(projectName) {
@@ -88,6 +90,8 @@ class AddAuditions extends React.Component {
             callback: this.state.callback
         }
 
+        this.setState({error: null})
+        
         AuditionsApiService.postAudition(audition)
             .then(res => {
                 if(!res.ok) {
@@ -118,14 +122,12 @@ class AddAuditions extends React.Component {
     }
     render() {
         const {casting} = this.context
-        const {error} = this.state
 
         return(
             <div className="add__audition__page app">
             <h2 className="app__heading1"> Add An Audition </h2>
             <h3 className="app__heading2">You're one step closer...</h3>
             <div className="creation__hint">* required field</div>
-            {!!error && <div role="alert" className="alert"><p className="alert__text">{error}</p></div>}
             <form method="get" className="add__audition__form" onSubmit = {e => this.handleSubmit(e)}>
                 <label htmlFor="casting-office" className="audition__label">Who called you in? *</label>
                 <select name="casting-office" id="casting-office" className="audition__input" onClick = {e => this.castingOfficeChange(e.target.value)} required>
