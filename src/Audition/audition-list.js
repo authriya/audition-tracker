@@ -8,6 +8,12 @@ import {Link} from 'react-router-dom'
 class AuditionList extends React.Component {
     static contextType = ApiContext
     render() {
+      window.onload = function () {
+        if (! localStorage.justOnce) {
+            localStorage.setItem("justOnce", "true");
+            window.location.reload();
+        }
+      }
         const {auditions = []} = this.context
         const {casting = []} = this.context
         return(

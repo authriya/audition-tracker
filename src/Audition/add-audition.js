@@ -78,7 +78,27 @@ class AddAuditions extends React.Component {
     handleSubmit(e) {
         e.preventDefault();
 
+        let {auditions} = this.context
+        var last =  function(array) {
+            if (array.length === 0) 
+              return null;
+            else
+               return array[array.length - 1];  
+        };
+        let lastItem = last(auditions)
+
+        var newId = function(item) {
+            if (item == null) {
+                let id = 1
+                return id
+            } else {
+                let id = item.id + 1
+                return id
+            }
+        }
+
         const audition = {
+            id: newId(lastItem),
             castingOffice: this.state.castingOffice,
             projectName: this.state.projectName,
             projectType: this.state.projectType,
