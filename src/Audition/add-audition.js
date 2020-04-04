@@ -113,33 +113,26 @@ class AddAuditions extends React.Component {
         this.setState({error: null})
 
         AuditionsApiService.postAudition(audition)
-            .then(res => {
-                if(!res.ok) {
-                    return res.json().then(error=>{
-                        throw error
-                    })
-                }
-                return res.json()
-            })
             .then((data) => {
                 this.context.addAudition(data)
             })
-            .then(                
+            .then(() => {setTimeout(
                 this.setState({
-                castingOffice:'',
-                projectName: '',
-                projectType:'',
-                roleType: '',
-                date: '',
-                clothingNotes: '',
-                rating:'',
-                notes: '',
-                callback: false,
-                }))
-            .then(this.props.history.push('/auditions'))
+                    castingOffice: '',
+                    projectName: '',
+                    projectType: '',
+                    roleType: '',
+                    date: '',
+                    clothingNotes: '',
+                    rating: '',
+                    notes: '',
+                    callback: false,
+                    }), 1000
+            )})
             .catch(res => {
                 this.setState({ error: res.error })
               })
+            .then(this.props.history.push('/auditions'))
     }
     render() {
         const {casting} = this.context
