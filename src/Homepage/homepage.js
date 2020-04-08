@@ -1,9 +1,13 @@
 import React from 'react'
 import './homepage.css'
+import ApiContext from '../ApiContext'
 
 class Homepage extends React.Component {
+    static contextType = ApiContext
     componentDidMount() {
-        console.log('home mounted')
+        if(this.context.auditions.length === 0 || this.context.casting.length === 0) {
+            this.context.handleLoginSuccess()
+        }
     }
     render() {
         return(

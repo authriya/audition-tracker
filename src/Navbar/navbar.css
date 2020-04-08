@@ -32,11 +32,10 @@
     color:  rgb(255, 185, 185)
 }
 
-.logout__button {
-    color:  rgb(255, 185, 185);
-    position: absolute;
-    right: 0;
-    top: 50%
+.Nav__list li.logout__button {
+    display: block;
+    text-align: center;
+    margin: auto;
 }
 
 .logout__link:hover, .logout__link:active, .logout__link:focus {

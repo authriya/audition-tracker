@@ -43,8 +43,10 @@ class Navbar extends React.Component{
                              Casting
                         </NavLink>
                     </li>
+                    <li key = "logout" className="logout__button">
+                        <NavLink className="logout__link Nav__link" to={'/'}>Logout</NavLink>
+                    </li>
                 </ul>
-                <div className="logout__button"><NavLink className="logout__link" to={'/'}>Logout</NavLink></div>
             </div>
         )
     }

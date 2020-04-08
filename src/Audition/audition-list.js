@@ -8,7 +8,9 @@ import {Link} from 'react-router-dom'
 class AuditionList extends React.Component {
     static contextType = ApiContext
     componentDidMount() {
-      console.log('auditions mounted')
+      if(this.context.auditions.length === 0 || this.context.casting.length === 0) {
+          this.context.handleLoginSuccess()
+      }
   }
     render() {
         const {auditions = []} = this.context
