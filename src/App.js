@@ -15,9 +15,92 @@ import {Route} from 'react-router-dom'
 import AuthApiService from './services/auth-api-service'
 import IdleService from './services/idle-service'
 import TokenService from './services/token-service'
+import AuditionsApiService from './services/auditions-api-service'
+import ApiContext from './ApiContext'
 import './App.css'
 
 class App extends React.Component {
+
+  constructor(props) {
+    super(props)
+    this.state = {
+        casting: [],
+        auditions: []
+      };
+}
+
+static defaultProps = {
+  history: {
+      push: () => {},
+    }
+}
+
+
+handleLoginSuccess = () => {
+  AuditionsApiService.getCasting()
+  .then((casting) => {
+    return AuditionsApiService.getAuditions().then((auditions) => {
+      this.setState({ casting, auditions });
+    });
+  })
+  .catch((error) => {
+    console.error({ error });
+  })
+}
+
+addAudition = (audition) => {
+  this.setState({
+    auditions: [...this.state.auditions, audition]
+  })
+}
+
+addCasting = (castingItem) => {
+  this.setState({
+    casting: [...this.state.casting, castingItem]
+  })
+}
+
+editCasting = (castingItemNew) => {
+  const castingItemUpdate = {
+    ...castingItemNew,
+    id: parseInt(castingItemNew.id)
+  }
+  var casting = this.state.casting.map(function (e, i) {  
+    if (e.id === castingItemUpdate.id) {
+      return castingItemUpdate;  
+    }
+    return e
+  });
+
+  this.setState({
+      casting
+    })
+}
+
+editAudition = (auditionNew) => {
+  const auditionUpdate = {
+    ...auditionNew,
+    id: parseInt(auditionNew.id)
+  }
+  var auditions = this.state.auditions.map(function (e, i) {  
+    if (e.id === auditionUpdate.id) {
+      return auditionUpdate;
+    }
+    return e
+  });
+
+  this.setState({
+    auditions
+  })
+}
+
+deleteAudition = (auditionId) => {
+  const parsedAudition = parseInt(auditionId)
+  this.setState({
+    auditions: this.state.auditions.filter(audition=> audition.id !== parsedAudition)
+  })
+
+}
   
   componentDidMount() {
     /*
@@ -120,13 +203,25 @@ class App extends React.Component {
     )}
 
   render() {
+    const value = {
+      casting: this.state.casting,
+      auditions: this.state.auditions,
+      addAudition: this.addAudition,
+      addCasting: this.addCasting,
+      editCasting: this.editCasting,
+      editAudition: this.editAudition,
+      deleteAudition: this.deleteAudition,
+      handleLoginSuccess: this.handleLoginSuccess
+    }
     return(
+      <ApiContext.Provider value={value}>
       <div className="App">
         <nav className ="navbar">{this.renderNavRoutes()}</nav>
         <main>
           {this.renderMainRoutes()}
         </main>
       </div>
+      </ApiContext.Provider>
     )
   }
 }

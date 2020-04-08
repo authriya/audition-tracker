@@ -44,6 +44,7 @@ class Navbar extends React.Component{
                         </NavLink>
                     </li>
                 </ul>
+                <div className="logout__button"><NavLink className="logout__link" to={'/'}>Logout</NavLink></div>
             </div>
         )
     }

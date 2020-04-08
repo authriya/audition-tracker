@@ -1,93 +1,12 @@
 import React from 'react'
-import AuditionsApiService from '../services/auditions-api-service'
-import ApiContext from '../ApiContext'
 import './homepage.css'
 
 class Homepage extends React.Component {
-    constructor(props) {
-        super(props)
-        this.state = {
-            casting: [],
-            auditions: []
-          };
-    }
-
     componentDidMount() {
-        AuditionsApiService.getCasting()
-        .then((casting) => {
-          return AuditionsApiService.getAuditions().then((auditions) => {
-            this.setState({ casting, auditions });
-          });
-        })
-        .catch((error) => {
-          console.error({ error });
-        })
+        console.log('home mounted')
     }
-    addAudition = (audition) => {
-        this.setState({
-          auditions: [...this.state.auditions, audition]
-        })
-      }
-    
-      addCasting = (castingItem) => {
-        this.setState({
-          casting: [...this.state.casting, castingItem]
-        })
-      }
-    
-      editCasting = (castingItemNew) => {
-        const castingItemUpdate = {
-          ...castingItemNew,
-          id: parseInt(castingItemNew.id)
-        }
-        var casting = this.state.casting.map(function (e, i) {  
-          if (e.id === castingItemUpdate.id) {
-            return castingItemUpdate;  
-          }
-          return e
-        });
-    
-        this.setState({
-            casting
-          })
-      }
-    
-      editAudition = (auditionNew) => {
-        const auditionUpdate = {
-          ...auditionNew,
-          id: parseInt(auditionNew.id)
-        }
-        var auditions = this.state.auditions.map(function (e, i) {  
-          if (e.id === auditionUpdate.id) {
-            return auditionUpdate;
-          }
-          return e
-        });
-    
-        this.setState({
-          auditions
-        })
-      }
-    
-      deleteAudition = (auditionId) => {
-        const parsedAudition = parseInt(auditionId)
-        this.setState({
-          auditions: this.state.auditions.filter(audition=> audition.id !== parsedAudition)
-        })
-    
-      }
     render() {
-        const value = {
-            casting: this.state.casting,
-            auditions: this.state.auditions,
-            addAudition: this.addAudition,
-            addCasting: this.addCasting,
-            editCasting: this.editCasting,
-            editAudition: this.editAudition,
-            deleteAudition: this.deleteAudition
-          }
         return(
-        <ApiContext.Provider value={value}>
             <div className="app__homepage app">
                 <div className="app__info">
                     <h1 className="app__heading1">How To Use This App</h1>
@@ -113,7 +32,6 @@ class Homepage extends React.Component {
                     <p className="by"> - Meryl Streep</p>
                 </div>
             </div>
-        </ApiContext.Provider>
         )
     }
 }

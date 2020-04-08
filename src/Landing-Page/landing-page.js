@@ -1,6 +1,7 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
 import AuthApiService from '../services/auth-api-service'
+import ApiContext from '../ApiContext'
 import './landing-page.css'
 
 class LandingPage extends React.Component {
@@ -10,13 +11,11 @@ class LandingPage extends React.Component {
           }
     }
 
-    state = { 
+    state = {
       error: null
-     }
-
-    handleLoginSuccess = () => {
-        this.props.history.push('/home')
     }
+
+    static contextType = ApiContext
 
     handleSubmitJwtAuth = ev => {
         ev.preventDefault()
@@ -30,7 +29,8 @@ class LandingPage extends React.Component {
           .then(res => {
             user_name.value = ''
             password.value = ''
-            this.handleLoginSuccess()
+            this.context.handleLoginSuccess()
+            this.props.history.push('/home')
           })
           .catch(res => {
             this.setState({ error: res.error })

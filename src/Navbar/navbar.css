@@ -32,6 +32,18 @@
     color:  rgb(255, 185, 185)
 }
 
+.logout__button {
+    color:  rgb(255, 185, 185);
+    position: absolute;
+    right: 0;
+    top: 50%
+}
+
+.logout__link:hover, .logout__link:active, .logout__link:focus {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
 @media only screen and (min-width: 1200px) {
     .Nav__list li {
         font-size: 20px;

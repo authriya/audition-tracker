@@ -7,6 +7,9 @@ import './casting-director-list.css'
 
 class CastingList extends React.Component {
     static contextType = ApiContext
+    componentDidMount() {
+        console.log('casting mounted')
+    }
     render() {
         const {casting = []} = this.context
         return(

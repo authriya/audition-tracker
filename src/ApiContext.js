@@ -7,5 +7,6 @@ export default React.createContext({
     addCasting: () => {},
     editAudition: () => {},
     editCasting: () => {},
-    deleteAudition: () => {}
+    deleteAudition: () => {},
+    handleLoginSuccess: () => {}
   })
